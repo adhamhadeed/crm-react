@@ -26,7 +26,7 @@ const DARK = {
 
 const STUDIO = {
   ...BASIC,
-  // navBarBgColor: "#4a8bc2",
+  navBarBgColor: "#4a8bc2",
   // sideNavBgColor: "#4a8bc2",
   // linkHoverBgColor: "#2f6897",
   // selectedListItemBgColor: "6px solid #2f6897",
