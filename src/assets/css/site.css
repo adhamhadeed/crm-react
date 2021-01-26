@@ -1,0 +1,14 @@
+:root {
+  --bread-crumb-sqaure-border-radius: 5px;
+  --square-padding: 0.4em;
+  --navbar-padding: 0.8em;
+  --square-font-size: 1.2em;
+}
+
+.bread-crumb-sqaure i.selected {
+  box-shadow: inset 1px 2px 7px #ccc;
+  border-radius: var(--bread-crumb-sqaure-border-radius);
+}
+.main-content.studio {
+  --bread-crumb-height: 0px;
+}

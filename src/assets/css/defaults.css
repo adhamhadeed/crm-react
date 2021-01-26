@@ -1,0 +1,10 @@
+:root {
+  --app-border-radius: 5px;
+  --app-zindex: 5;
+  --app-pdding: 0px;
+  --app-margin: 0px;
+  --app-font-size: 12px;
+  --app-transition: 0.4s;
+  --app-alt-padding: 20px;
+  --app-alt-margin: 20px;
+}
