@@ -17,6 +17,9 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: ${(props) => props.theme.boxShadow}; 
     color:${(props) => props.theme.navTextColor};
   }
+  .side-nav-list-item{
+    border-bottom-color: ${(props) => props.theme.sideNavBorderBottomColor};
+  }
   a, a:hover{
     color: ${(props) => props.theme.linkColor};
   }

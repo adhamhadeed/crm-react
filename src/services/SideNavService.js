@@ -5,7 +5,7 @@ const getItems = (view) => {
         {
           id: "dashboard",
           icon: "fa fa-tachometer",
-          path: "/Studio",
+          path: "/studio",
           label: "Dashboard",
           isRedirect: true,
         },
@@ -33,14 +33,14 @@ const getItems = (view) => {
         {
           id: "users",
           icon: "fa fa-users",
-          path: "/Studio/Users",
+          path: "/studio/users",
           label: "Users",
           isRedirect: true,
         },
         {
           id: "settings",
           icon: "fa fa-cogs",
-          path: "/Studio/Settings",
+          path: "/studio/settings",
           label: "Settings",
           isRedirect: true,
         },
@@ -72,14 +72,14 @@ const getItems = (view) => {
         {
           id: "reports",
           icon: "fa fa-database",
-          path: "/Reports",
+          path: "/reports",
           label: "Reports",
           isRedirect: true,
         },
         {
           id: "studio",
           icon: "fa fa-cogs",
-          path: "/Studio",
+          path: "/studio",
           label: "Studio",
           isRedirect: true,
         },

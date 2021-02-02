@@ -7,7 +7,7 @@ import Reports from "./pages/Reports";
 const Router = (props) => {
   return (
     <Switch>
-      <Route exact path="/Reports" component={Reports} />
+      <Route exact path="/reports" component={Reports} />
       <Route exact path="/notFound" component={NotFound} />
       <Route exact path="/" component={Dashboard} />
       <Redirect to="/notFound" />

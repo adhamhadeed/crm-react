@@ -46,6 +46,39 @@ body {
   background-color: transparent;
 }
 
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  :root {
+    --side-nav-list-item-icon-font-size: 1.7em;
+    --side-nav-width: 55px;
+  }
+  .side-nav-list-item span {
+    display: none;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  :root {
+    --side-nav-list-item-icon-font-size: 1.2em;
+    --side-nav-width: 80px;
+  }
+  .side-nav-list-item span {
+    display: block;
+  }
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+  :root {
+    --side-nav-list-item-icon-font-size: 1.2em;
+  }
+}
+
 .main-app {
   height: calc(100vh - var(--nav-bar-height));
   overflow: hidden;
@@ -97,6 +130,8 @@ body {
   height: var(--side-nav-list-item-height);
   cursor: pointer;
   transition: var(--app-transition);
+  border-bottom: 1px solid;
+  position: relative;
 }
 .side-nav-list-item i {
   padding: var(--side-nav-list-item-icon-padding);
