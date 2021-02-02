@@ -76,6 +76,8 @@ body {
   position: absolute;
   transition: var(--app-transition);
   z-index: calc(var(--app-zindex) - 1);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .main-content {
