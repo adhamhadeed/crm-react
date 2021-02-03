@@ -1,7 +1,7 @@
 import React from "react";
 
 function Dashboard(props) {
-  return <div>Studio dashboard</div>;
+  return <div className="page">Studio dashboard</div>;
 }
 
 export default Dashboard;

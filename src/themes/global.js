@@ -33,4 +33,8 @@ export const GlobalStyle = createGlobalStyle`
     background-color:${(props) => props.theme.sideNavSliderBgColor};
     box-shadow: ${(props) => props.theme.boxShadow}; 
   }
+  .page{
+    background-color:${(props) => props.theme.pageBgColor};
+    box-shadow: ${(props) => props.theme.boxShadow}; 
+  }
 `;

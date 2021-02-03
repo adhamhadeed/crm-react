@@ -1,0 +1,37 @@
+.page {
+  flex: 1;
+  height: 100%;
+  border-radius: var(--app-border-radius);
+  padding: var(--app-alt-padding);
+}
+.boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.box {
+  width: 400px;
+  height: 100px;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.box > div {
+  padding: 15px;
+  min-height: 100%;
+  box-shadow: inset var(--app-box-shadow);
+}
+.box div:first-child {
+  border-right: 1px solid #f0f0f0;
+}
+.box div:last-child {
+  flex: 1;
+}
+.box i {
+  font-size: 55px;
+}

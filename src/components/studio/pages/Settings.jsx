@@ -1,7 +1,7 @@
 import React from "react";
 
 const Settings = () => {
-  return <div>Setting studio</div>;
+  return <div className="page">Setting studio</div>;
 };
 
 export default Settings;

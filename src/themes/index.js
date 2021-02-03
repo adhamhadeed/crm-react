@@ -13,6 +13,7 @@ const BASIC = {
   navTextColor: "#4a8bc2",
   selectedListItemBgColor: "6px solid #4a8bc2",
   sideNavBorderBottomColor: "#f0f0f0",
+  pageBgColor: "#fff",
 };
 const DARK = {
   ...BASIC,
