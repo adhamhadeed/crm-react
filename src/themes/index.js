@@ -9,9 +9,9 @@ const BASIC = {
   linkColor: "#4a8bc2",
   linkHoverBgColor: "#f8f8f8",
   boxShadow: "0 1px 15px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.1)",
-  bodyTextColor: "#4a8bc2",
+  bodyTextColor: "var(--app-color)",
   navTextColor: "#4a8bc2",
-  selectedListItemBgColor: "6px solid #4a8bc2",
+  selectedListItemBgColor: "#4a8bc2",
   sideNavBorderBottomColor: "#f0f0f0",
   pageBgColor: "#fff",
 };
@@ -23,16 +23,13 @@ const DARK = {
   navBarBgColor: "#0f680f",
   sideNavBgColor: "#0f680f",
   navTextColor: "#ffff",
-  selectedListItemBgColor: "6px solid #089308",
+  selectedListItemBgColor: "#089308",
 };
 
 const STUDIO = {
   ...BASIC,
-  //navBarBgColor: "#4a8bc2",
-  // sideNavBgColor: "#4a8bc2",
-  // linkHoverBgColor: "#2f6897",
-  // selectedListItemBgColor: "6px solid #2f6897",
-  // navTextColor: "#fff",
+  bodyTextColor: "red",
+  navTextColor: "red",
 };
 
 const THEMES = {

@@ -4,34 +4,68 @@
   border-radius: var(--app-border-radius);
   padding: var(--app-alt-padding);
 }
+
 .boxes {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--app-alt-padding);
 }
+
 .box {
-  width: 400px;
-  height: 100px;
+  height: 4.5rem;
   border: 1px solid #f0f0f0;
-  border-radius: 5px;
+  border-radius: var(--app-border-radius);
   display: flex;
-  justify-content: flex-start;
+  flex: 1 1 12.5rem;
+
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 .box > div {
-  padding: 15px;
-  min-height: 100%;
+  padding: 0.8rem;
+  height: 100%;
   box-shadow: inset var(--app-box-shadow);
 }
 .box div:first-child {
   border-right: 1px solid #f0f0f0;
+  position: relative;
+  width: 6rem;
 }
 .box div:last-child {
   flex: 1;
 }
 .box i {
-  font-size: 55px;
+  font-size: 4em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
+/* .table-toolbar-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #f0f0f0;
+  height: 55px;
+  box-shadow: inset 1px 2px 4px #ccc;
+  border-radius: 5px;
+
+  background-image: -moz-linear-gradient(top, #fdfdfd, #f4f4f4);
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(#fdfdfd),
+    to(#f4f4f4)
+  );
+  background-image: -webkit-linear-gradient(top, #fdfdfd, #f4f4f4);
+  background-image: -o-linear-gradient(top, #fdfdfd, #f4f4f4);
+  background-image: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdfdfd', endColorstr='#fff4f4f4', GradientType=0);
+} */

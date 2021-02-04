@@ -4,7 +4,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.backgroundColor};
     color:${(props) => props.theme.bodyTextColor};
-    font-size:${(props) => props.theme.fontSize};
   }
   nav{
     background-color: ${(props) => props.theme.navBarBgColor};

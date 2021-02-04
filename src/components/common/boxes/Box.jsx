@@ -1,12 +1,12 @@
 import React from "react";
 
-const Box = ({ id, icon }) => {
+const Box = ({ icon, info }) => {
   return (
     <div className="box">
-      <div>
+      <div className="box-icon">
         <i className={icon}></i>
       </div>
-      <div className="box-info">abc</div>
+      <div className="box-info">{info}</div>
     </div>
   );
 };

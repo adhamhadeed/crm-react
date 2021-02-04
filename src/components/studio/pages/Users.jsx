@@ -1,18 +1,43 @@
 import React, { useEffect, useState } from "react";
-import UsersService from "./../../../services/UsersService";
+import UserService from "./../../../services/UserService";
 import Boxes from "./../../common/boxes/Boxes";
+import UserTable from "./../tables/UserTable";
 
 const Users = () => {
+  const [users, setUsers] = useState([]);
+  const [loading, setIsLoading] = useState(true);
   const boxes = [
     { id: 1, icon: "fa fa-users" },
     { id: 2, icon: "fa fa-users" },
     { id: 3, icon: "fa fa-users" },
   ];
-  const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
-    const { data } = await UsersService.getUsers();
-    setUsers(data);
+    try {
+      const { data } = await UserService.getUsers();
+      setUsers(data);
+    } catch (err) {
+      console.log(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const addUser = async (user) => {
+    const newUser = await UserService.addUser(user);
+    setUsers(newUser, ...users);
+  };
+  const deleteUser = (userId) => {
+    const usersList = users.filter((user) => user.id !== userId);
+    setUsers(usersList);
+  };
+  const editUser = (userId) => {
+    if (userId) {
+      const index = users.findIndex((user) => user.id === userId);
+      if (index > -1) {
+        users[index] = { ...users[index] };
+      }
+    }
   };
 
   useEffect(() => {
@@ -21,12 +46,14 @@ const Users = () => {
 
   return (
     <div className="page">
-      <div className="page-layout">
-        <Boxes list={boxes} />
-        <div className="table">
-          <div className=""></div>
+      {!loading ? (
+        <div className="page-layout">
+          <Boxes list={boxes} />
+          <UserTable data={users} editUser={editUser} deleteUser={deleteUser} />
         </div>
-      </div>
+      ) : (
+        "loading"
+      )}
     </div>
   );
 };
