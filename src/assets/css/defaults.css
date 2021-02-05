@@ -11,4 +11,7 @@
   /* fonts */
   --app-font-size: 100%;
   --app-font-family: "Roboto", "Segoe UI", "sans-serif";
+
+  /* color this may removed later on*/
+  --app-color: #4a8bc2;
 }

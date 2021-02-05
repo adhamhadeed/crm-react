@@ -44,13 +44,6 @@ const getItems = (view) => {
           label: "Settings",
           isRedirect: true,
         },
-        {
-          id: "site",
-          icon: "fa fa-undo",
-          path: "/",
-          label: "Back To Site",
-          isRedirect: true,
-        },
       ];
     default:
       return [

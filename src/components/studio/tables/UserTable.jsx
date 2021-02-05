@@ -1,44 +1,46 @@
 import React from "react";
 import Table from "./../../common/Table";
+import Button from "./../../common/Button";
 
 const UserTable = ({ data, editUser, deleteUser }) => {
   const columns = [
     {
-      selector: "name",
+      key: "name",
       name: "Full Name",
-      cell: ({ name }) => `${name.firstname} ${name.lastname} `,
-      width: "150px",
+      formatter: ({ row }) => `${row.name.firstname} ${row.name.lastname} `,
+      width: 150,
+      frozen: true,
     },
     {
-      selector: "username",
+      key: "username",
       name: "User Name",
       sortable: true,
-      width: "150px",
+      width: 150,
     },
     {
       id: "address",
       name: "Address",
       sortable: true,
-      cell: ({ address }) =>
-        `${address.city}, ${address.street} ${address.zipcode}`,
+      formatter: ({ row }) =>
+        `${row.address.city}, ${row.address.street} ${row.address.zipcode}`,
     },
-    { selector: "email", name: "Email", sortable: true },
-    { selector: "phone", name: "Phone", sortable: true },
-    { selector: "id", name: "Active", right: true, cell: (row) => "active" },
+    { key: "email", name: "Email", sortable: true, resizable: true },
+    { key: "phone", name: "Phone", sortable: true },
+    { key: "id", name: "Active", formatter: (row) => "active" },
     {
-      selector: "id",
-      width: "80px",
+      key: "action",
+      width: 60,
       name: "",
-      right: true,
-      cell: (row) => (
+
+      formatter: (row) => (
         <div className="action-button">
           {" "}
-          {/* <Button icon="fa fa-trash" danger onClick={() => onDelete(row.id)} /> */}
-          <i className="fa fa-trash"></i>
-          <i className="fa fa-pencil"></i>
+          {/* <Button icon="fa fa-trash " danger onClick={() => onDelete(row.id)} /> */}
+          <i className="fa fa-trash" onClick={() => onDelete(row.id)}></i>
+          <i className="fa fa-pencil" onClick={() => editUser(row)}></i>
           {/* <Button
             displayAsIcon
-            icon="fa fa-pencil"
+            icon="fa fa-pencil "
             warning
             onClick={() => editUser(row)}
           /> */}
@@ -50,10 +52,13 @@ const UserTable = ({ data, editUser, deleteUser }) => {
   const onDelete = (userId) => {
     window.confirm("are you want to delete this user") && deleteUser(userId);
   };
+  const onColumnResize = (row, col) => {
+    console.log(row, col);
+  };
 
   return (
     <div className="custom-table">
-      <Table data={data} columns={columns} selectableRows />
+      <Table data={data} columns={columns} onColumnResize={onColumnResize} />
     </div>
   );
 };

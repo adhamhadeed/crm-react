@@ -2,9 +2,9 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-const TableToolbar = ({ buttons }) => {
+const Toolbar = ({ buttons }) => {
   return (
-    <div className="table-toolbar-header">
+    <div className=" toolbar-header">
       {buttons.map(({ id, onClick, label, icon }) => (
         <Button
           variant="contained"
@@ -19,4 +19,4 @@ const TableToolbar = ({ buttons }) => {
   );
 };
 
-export default TableToolbar;
+export default Toolbar;

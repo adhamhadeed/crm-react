@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import UserService from "./../../../services/UserService";
 import Boxes from "./../../common/boxes/Boxes";
 import UserTable from "./../tables/UserTable";
+import Loading from "./../../common/Loading";
+import PageHeader from "./../../common/PageHeader";
 
+const header = "users";
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [loading, setIsLoading] = useState(true);
   const boxes = [
-    { id: 1, icon: "fa fa-users" },
-    { id: 2, icon: "fa fa-users" },
-    { id: 3, icon: "fa fa-users" },
+    { id: 1, icon: "fa fa-users", label: "Total Users" },
+    { id: 2, icon: "fa fa-user", label: "Regular User" },
+    { id: 3, icon: "fa fa-user-secret", label: "Admin Users" },
   ];
 
   const fetchUsers = async () => {
@@ -47,12 +50,19 @@ const Users = () => {
   return (
     <div className="page">
       {!loading ? (
-        <div className="page-layout">
-          <Boxes list={boxes} />
-          <UserTable data={users} editUser={editUser} deleteUser={deleteUser} />
-        </div>
+        <>
+          <PageHeader icon="fa fa-users" header={header} />
+          <div className="page-layout">
+            <Boxes list={boxes} />
+            <UserTable
+              data={users}
+              editUser={editUser}
+              deleteUser={deleteUser}
+            />
+          </div>
+        </>
       ) : (
-        "loading"
+        <Loading />
       )}
     </div>
   );

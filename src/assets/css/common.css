@@ -12,8 +12,7 @@ html {
   /* side-nav */
   --side-nav-width: 5rem;
   --side-nav-list-item-height: 4rem;
-  --side-nav-list-item-icon-font-size: 1.2em;
-  --side-nav-list-item-icon-padding: 0.2rem;
+  --side-nav-list-item-icon-padding: 0.5rem;
   --side-nav-slider-width: 15.63rem;
 }
 
@@ -27,6 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--app-font-family);
+  overflow: hidden;
 }
 /* change scroll bar in chrome for big screens only*/
 ::-ms-clear {
@@ -53,64 +53,6 @@ body {
   background-color: transparent;
 }
 
-@media (min-width: 320px) {
-  /* smartphones, iPhone, portrait 480x320 phones */
-  :root {
-    --app-font-size: 13px;
-  }
-  .side-nav-list-item span {
-    display: none;
-  }
-}
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-/* @media (min-width: 481px) {
-  
-  :root {
-    --side-nav-list-item-icon-font-size: 1.2em;
- 
-  }
-  .side-nav-list-item span {
-    display: block;
-  }
-} */
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-/* @media (min-width: 641px) {
-  
-  :root {
-    --app-font-size: 0.5rem;
-  }
-  .side-nav-list-item span {
-    display: block;
-  }
-} */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  :root {
-    --app-font-size: 18px;
-  }
-  .side-nav-list-item span {
-    display: none;
-  }
-}
-/* iPad landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  :root {
-    --app-font-size: 12px;
-  }
-  .side-nav-list-item span {
-    display: block;
-  }
-}
-
-/* big landscape tablets, laptops, and desktops */
-@media (min-width: 1025px) {
-  :root {
-    --app-font-size: 16px;
-  }
-  .side-nav-list-item span {
-    display: block;
-  }
-}
-
 .main-app {
   height: calc(100vh - var(--nav-bar-height));
   overflow: hidden;
@@ -118,7 +60,7 @@ body {
 .main-content {
   height: 100%;
   margin-left: var(--side-nav-width);
-  font-size: 0.75em;
+  font-size: 0.75rem;
 }
 .main-content.studio {
   --bread-crumb-height: 0px;
@@ -158,11 +100,14 @@ body {
   transition: var(--app-transition);
   border-bottom: 1px solid;
   position: relative;
-  font-size: 0.75em;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .side-nav-list-item i {
   padding: var(--side-nav-list-item-icon-padding);
-  font-size: var(--side-nav-list-item-icon-font-size);
+}
+.side-nav-list-item span {
+  font-size: 0.6rem;
 }
 .side-nav-slider {
   width: var(--side-nav-slider-width);
@@ -183,4 +128,9 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 0.83em;
+  cursor: pointer;
+  color: #ccc;
+}
+.action-button i:hover {
+  color: #333;
 }

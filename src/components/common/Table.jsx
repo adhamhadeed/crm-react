@@ -1,8 +1,16 @@
 import React from "react";
-import DataTable from "react-data-table-component";
+import DataGrid from "react-data-grid";
 
 const Table = ({ data, columns, ...rest }) => {
-  return <DataTable columns={columns} data={data} {...rest} />;
+  return (
+    <DataGrid
+      {...rest}
+      columns={columns}
+      rows={data}
+      rowGetter={(i) => data[i]}
+      rowsCount={data.length}
+    />
+  );
 };
 
 export default Table;

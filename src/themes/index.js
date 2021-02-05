@@ -9,7 +9,7 @@ const BASIC = {
   linkColor: "#4a8bc2",
   linkHoverBgColor: "#f8f8f8",
   boxShadow: "0 1px 15px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.1)",
-  bodyTextColor: "var(--app-color)",
+  bodyTextColor: "#4a8bc2",
   navTextColor: "#4a8bc2",
   selectedListItemBgColor: "#4a8bc2",
   sideNavBorderBottomColor: "#f0f0f0",
@@ -28,8 +28,6 @@ const DARK = {
 
 const STUDIO = {
   ...BASIC,
-  bodyTextColor: "red",
-  navTextColor: "red",
 };
 
 const THEMES = {
