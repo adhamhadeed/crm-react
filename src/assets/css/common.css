@@ -59,8 +59,7 @@ body {
 @media (min-width: 320px) {
   /* smartphones, iPhone, portrait 480x320 phones */
   :root {
-    --app-font-size: 10px;
-
+    --app-font-size: 8px;
     --side-nav-list-item-display-label: none;
   }
 }
@@ -97,6 +96,7 @@ body {
 
 .main-app {
   height: calc(100vh - var(--nav-bar-height));
+  overflow: hidden;
 }
 .main-content {
   height: 100%;
