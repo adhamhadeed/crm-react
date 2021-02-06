@@ -16,7 +16,7 @@ html {
   --side-nav-slider-width: 15.63rem;
   --side-nav-list-item-display-label: block;
   /* nav bar */
-  --nav-bar-display-menu: none;
+  --nav-bar-display-menu: block;
 }
 
 * {
@@ -85,7 +85,6 @@ body {
 @media (min-width: 1025px) {
   :root {
     --app-font-size: 14px;
-
     --side-nav-list-item-display-label: block;
   }
 }
@@ -127,6 +126,23 @@ body {
   height: 100%;
   box-shadow: var(--app-box-shadow);
   display: var(--nav-bar-display-menu);
+  position: relative;
+}
+.nav-bar .menu-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-bar .user-info {
+  padding-right: calc(var(--app-alt-padding) + 8px);
+}
+.nav-bar .user-info i {
+  padding-right: 0.5rem;
+}
+.nav-bar .user-info span {
+  font-weight: bold;
+  font-size: 0.75rem;
 }
 .side-nav {
   height: calc(100% - var(--nav-bar-height));
