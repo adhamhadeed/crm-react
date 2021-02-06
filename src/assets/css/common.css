@@ -136,6 +136,9 @@ body {
 }
 .nav-bar .user-info {
   padding-right: var(--app-alt-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .nav-bar .user-info i {
   padding-right: 0.5rem;
