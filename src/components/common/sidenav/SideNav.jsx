@@ -77,8 +77,12 @@ const SideNav = (props) => {
     if (sliderRef.current) sliderRef.current.classList.remove("flip");
 
     if (btn.isRedirect || btn.id === selectedButtonId || !toggle) {
-      if (btn.isRedirect) changeRoute(btn);
-      setToggle(!toggle);
+      if (btn.isRedirect) {
+        changeRoute(btn);
+        setToggle(false);
+      } else {
+        setToggle(!toggle);
+      }
     } else {
       // slider already open and cliked over other button
       setTimeout(() => {
