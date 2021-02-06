@@ -59,7 +59,7 @@ body {
 @media (min-width: 320px) {
   /* smartphones, iPhone, portrait 480x320 phones */
   :root {
-    --app-font-size: 8px;
+    --app-font-size: 10px;
 
     --side-nav-list-item-display-label: none;
   }
@@ -135,7 +135,7 @@ body {
   transform: translate(-50%, -50%);
 }
 .nav-bar .user-info {
-  padding-right: calc(var(--app-alt-padding) + 8px);
+  padding-right: var(--app-alt-padding);
 }
 .nav-bar .user-info i {
   padding-right: 0.5rem;
