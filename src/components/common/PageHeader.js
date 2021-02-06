@@ -4,7 +4,7 @@ const PageHeader = ({ icon, header }) => {
   return (
     <div className="page-header">
       <i className={icon}></i>
-      {header}
+      <span>{header}</span>
     </div>
   );
 };

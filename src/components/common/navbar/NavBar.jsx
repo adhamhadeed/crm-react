@@ -4,7 +4,9 @@ function NavBar(props) {
   console.log("nvbar");
   return (
     <nav className="nav-bar">
-      <span className="navbar-brand mb-0 h1"></span>
+      <div className="menu-icon">
+        <i className="fa fa-bars"></i>
+      </div>
     </nav>
   );
 }

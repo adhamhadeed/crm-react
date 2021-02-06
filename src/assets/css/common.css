@@ -4,16 +4,19 @@ html {
 
 :root {
   /* nav-bar */
-  --nav-bar-height: 3.75rem;
+  --nav-bar-height: 3.4375rem;
 
   /* bread-crumb */
   --bread-crumb-height: 3rem;
 
   /* side-nav */
   --side-nav-width: 5rem;
-  --side-nav-list-item-height: 4rem;
+  --side-nav-list-item-height: 4.35em;
   --side-nav-list-item-icon-padding: 0.5rem;
   --side-nav-slider-width: 15.63rem;
+  --side-nav-list-item-display-label: block;
+  /* nav bar */
+  --nav-bar-display-menu: none;
 }
 
 * {
@@ -53,14 +56,72 @@ body {
   background-color: transparent;
 }
 
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  :root {
+    --app-font-size: 8px;
+    /* --side-nav-width: 0; */
+    --nav-bar-display-menu: block;
+    --side-nav-list-item-display-label: none;
+    /* --app-side-nav-font-size: 0.88rem; */
+    /*--app-content-font-size: 0.88rem; */
+  }
+}
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+/* @media (min-width: 481px) {
+    
+    :root {
+      --side-nav-list-item-icon-font-size: 1.2em;
+   
+    }
+    .side-nav-list-item span {
+      display: block;
+    }
+  } */
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+/* | */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  :root {
+    --app-font-size: 12px;
+  }
+}
+/* |--> */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  :root {
+    --app-font-size: 14px;
+    --side-nav-width: 5rem;
+    --nav-bar-display-menu: none;
+    --side-nav-list-item-display-label: block;
+  }
+}
+
+/* big landscape tablets, laptops, and desktops */
+
+@media (min-width: 1025px) {
+  :root {
+    --app-font-size: 14px;
+    --side-nav-width: 5rem;
+    --nav-bar-display-menu: none;
+    --side-nav-list-item-display-label: block;
+  }
+}
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1280px) {
+  :root {
+    --app-font-size: 16px;
+    --side-nav-width: 5rem;
+    --nav-bar-display-menu: none;
+    --side-nav-list-item-display-label: block;
+  }
+}
+
 .main-app {
   height: calc(100vh - var(--nav-bar-height));
-  overflow: hidden;
 }
 .main-content {
   height: 100%;
   margin-left: var(--side-nav-width);
-  font-size: 0.75rem;
 }
 .main-content.studio {
   --bread-crumb-height: 0px;
@@ -68,17 +129,25 @@ body {
 .content {
   height: calc(100% - var(--bread-crumb-height));
   padding: var(--app-alt-padding);
+  font-size: var(--app-content-font-size);
 }
 .nav-bar {
   width: 100%;
   height: var(--nav-bar-height);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: var(--app-zindex);
 }
 
+.nav-bar .menu-icon {
+  width: var(--side-nav-width);
+  text-align: center;
+  height: 100%;
+  box-shadow: var(--app-box-shadow);
+  display: var(--nav-bar-display-menu);
+}
 .side-nav {
   height: calc(100% - var(--nav-bar-height));
   width: var(--side-nav-width);
@@ -87,6 +156,7 @@ body {
   z-index: calc(var(--app-zindex) - 1);
   overflow-y: auto;
   overflow-x: hidden;
+  font-size: var(--app-side-nav-font-size);
 }
 
 .side-nav-list-item {
@@ -100,19 +170,20 @@ body {
   transition: var(--app-transition);
   border-bottom: 1px solid;
   position: relative;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 .side-nav-list-item i {
   padding: var(--side-nav-list-item-icon-padding);
 }
 .side-nav-list-item span {
-  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.6em;
+  display: var(--side-nav-list-item-display-label);
 }
 .side-nav-slider {
   width: var(--side-nav-slider-width);
-  height: calc(100%);
-  top: 0;
+  height: calc(100% - var(--nav-bar-height));
+  top: var(--nav-bar-height);
   position: absolute;
   left: calc((var(--side-nav-slider-width) + var(--side-nav-width)) * -1);
   z-index: calc(var(--app-zindex) - 2);
@@ -129,8 +200,8 @@ body {
   align-items: center;
   gap: 0.83em;
   cursor: pointer;
-  color: #ccc;
+  color: red;
 }
 .action-button i:hover {
-  color: #333;
+  color: green;
 }

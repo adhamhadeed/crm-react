@@ -1,16 +1,20 @@
 import React from "react";
-// import Toolbar from "../common/Toolbar";
 // import List from "../common/List";
+import Toolbar from "./../Toolbar";
 
-function SideNavSlider({ buttons, slide, data, selected, onClick }) {
-  // const getLeftPos = () => {
-  //   return {
-  //     left: !slide
-  //       ? "calc((var(--sideNavSliderWidth) + var(--sideNavWidth)) * -1)"
-  //       : "var(--sideNavWidth)",
-  //   };
-  // };
-  return <div className="side-nav-slider"></div>;
+function SideNavSlider({ toggle, toolbarButtons }) {
+  console.log("slider");
+
+  const toggleSlider = () => {
+    let className = "side-nav-slider";
+    return toggle ? (className += " slide-in") : className;
+  };
+
+  return (
+    <div className={toggleSlider()}>
+      <Toolbar buttons={toolbarButtons} />
+    </div>
+  );
 }
 
 export default SideNavSlider;

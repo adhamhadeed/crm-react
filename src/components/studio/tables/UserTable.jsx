@@ -18,7 +18,7 @@ const UserTable = ({ data, editUser, deleteUser }) => {
       width: 150,
     },
     {
-      id: "address",
+      key: "address",
       name: "Address",
       sortable: true,
       formatter: ({ row }) =>

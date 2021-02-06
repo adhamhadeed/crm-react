@@ -7,8 +7,8 @@ const Box = ({ icon, label }) => {
         <i className={icon}></i>
       </div>
       <div className="box-info">
-        <div>{label}</div>
-        <div className="user-num">50</div>
+        <div className="box-label-info">{label}</div>
+        <div className="box-user-num">50</div>
       </div>
     </div>
   );

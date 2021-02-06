@@ -8,7 +8,33 @@ const SideNav = (props) => {
   const history = useHistory();
   const { setView: setIsSiteView, items } = useGlobalContext();
   const [toggle, setToggle] = useState(false);
-
+  const [buttonId, setButtonId] = useState(null);
+  const toolbarButtons = [
+    {
+      id: "close",
+      label: "Close",
+      icon: "fa fa-times",
+      onClick: (e) => handleCloseButton(e),
+    },
+    {
+      id: "add",
+      label: "Add",
+      icon: "fa fa-plus",
+      onClick: (e) => handleAddButton(e),
+    },
+    {
+      id: "edit",
+      label: "Edit",
+      icon: "fa fa-pencil",
+      onClick: (e) => handleEditButton(e),
+    },
+    {
+      id: "delete",
+      label: "Delete",
+      icon: "fa fa-trash",
+      onClick: (e) => handleDeleteButton(e),
+    },
+  ];
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const onHistoryPathChanged = () => {
     setIsSiteView(
@@ -32,32 +58,7 @@ const SideNav = (props) => {
   //     slideIn: false,
   //     selectedSideNavBtnId: "examples",
   //     selectedSliderNavBtnId: null,
-  //     toolbarButtons: [
-  //       {
-  //         id: "close",
-  //         label: "Close",
-  //         icon: "fa fa-times",
-  //         //  onClick: (e) => this.handleCloseButton(e),
-  //       },
-  //       {
-  //         id: "add",
-  //         label: "Add",
-  //         icon: "fa fa-plus",
-  //         // onClick: (e) => this.handleAddButton(e),
-  //       },
-  //       {
-  //         id: "edit",
-  //         label: "Edit",
-  //         icon: "fa fa-pencil",
-  //         //  onClick: (e) => this.handleEditButton(e),
-  //       },
-  //       {
-  //         id: "delete",
-  //         label: "Delete",
-  //         icon: "fa fa-trash",
-  //         // onClick: (e) => this.handleDeleteButton(e),
-  //       },
-  //     ],
+
   //   };
   // }
 
@@ -68,18 +69,18 @@ const SideNav = (props) => {
   //     this.changeRoute(btn);
   //   }
   // };
-  // handleCloseButton = (e) => {
-  //   this.setState({ slideIn: false });
-  // };
-  // handleAddButton = (e) => {
-  //   console.log("add");
-  // };
-  // handleEditButton = (e) => {
-  //   console.log("edit");
-  // };
-  // handleDeleteButton = (e) => {
-  //   console.log("delete");
-  // };
+  const handleCloseButton = (e) => {
+    setToggle(false);
+  };
+  const handleAddButton = (e) => {
+    console.log("add");
+  };
+  const handleEditButton = (e) => {
+    console.log("edit");
+  };
+  const handleDeleteButton = (e) => {
+    console.log("delete");
+  };
   const toggleMenu = (btn) => {
     //   let { selectedSideNavBtnId, slideIn } = this.state;
     //   if (selectedSideNavBtnId !== btn.id) {
@@ -107,19 +108,28 @@ const SideNav = (props) => {
   };
 
   const handleClick = (btn) => {
+    setButtonId(btn.id);
     if (btn.isRedirect) {
       changeRoute(btn);
       setToggle(false);
     } else {
-      toggleMenu(btn);
+      setToggle(!toggle);
     }
   };
 
+  const getToolBarButtons = () => {
+    if (buttonId === "modules") {
+      return toolbarButtons.splice(0, 1);
+    }
+    return toolbarButtons;
+  };
   return (
-    <div className="side-nav">
-      <SideNavList items={items} onClick={handleClick} />
-      <SideNavSlider />
-    </div>
+    <>
+      <div className="side-nav">
+        <SideNavList items={items} onClick={handleClick} />
+      </div>
+      <SideNavSlider toggle={toggle} toolbarButtons={getToolBarButtons()} />
+    </>
   );
 };
 export default SideNav;
