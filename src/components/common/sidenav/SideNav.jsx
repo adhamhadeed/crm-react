@@ -81,19 +81,19 @@ const SideNav = (props) => {
   const handleDeleteButton = (e) => {
     console.log("delete");
   };
-  const toggleMenu = (btn) => {
-    //   let { selectedSideNavBtnId, slideIn } = this.state;
-    //   if (selectedSideNavBtnId !== btn.id) {
-    //     if (!slideIn) slideIn = !slideIn;
-    //   } else {
-    //     slideIn = !slideIn;
-    //   }
-    //   this.setState((prevState) => ({
-    //     ...prevState,
-    //     selectedSideNavBtnId: btn.id,
-    //     slideIn,
-    //   }));
-  };
+  //const toggleMenu = (btn) => {
+  //   let { selectedSideNavBtnId, slideIn } = this.state;
+  //   if (selectedSideNavBtnId !== btn.id) {
+  //     if (!slideIn) slideIn = !slideIn;
+  //   } else {
+  //     slideIn = !slideIn;
+  //   }
+  //   this.setState((prevState) => ({
+  //     ...prevState,
+  //     selectedSideNavBtnId: btn.id,
+  //     slideIn,
+  //   }));
+  // };
 
   const changeRoute = (btn) => {
     // const { selectedSideNavBtnId } = this.state;

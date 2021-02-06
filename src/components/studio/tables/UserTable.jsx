@@ -1,6 +1,5 @@
 import React from "react";
 import Table from "./../../common/Table";
-import Button from "./../../common/Button";
 
 const UserTable = ({ data, editUser, deleteUser }) => {
   const columns = [
