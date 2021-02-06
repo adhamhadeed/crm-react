@@ -60,25 +60,10 @@ body {
   /* smartphones, iPhone, portrait 480x320 phones */
   :root {
     --app-font-size: 8px;
-    /* --side-nav-width: 0; */
-    --nav-bar-display-menu: block;
+
     --side-nav-list-item-display-label: none;
-    /* --app-side-nav-font-size: 0.88rem; */
-    /*--app-content-font-size: 0.88rem; */
   }
 }
-/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-/* @media (min-width: 481px) {
-    
-    :root {
-      --side-nav-list-item-icon-font-size: 1.2em;
-   
-    }
-    .side-nav-list-item span {
-      display: block;
-    }
-  } */
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 
 /* | */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -90,8 +75,7 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   :root {
     --app-font-size: 14px;
-    --side-nav-width: 5rem;
-    --nav-bar-display-menu: none;
+
     --side-nav-list-item-display-label: block;
   }
 }
@@ -101,8 +85,7 @@ body {
 @media (min-width: 1025px) {
   :root {
     --app-font-size: 14px;
-    --side-nav-width: 5rem;
-    --nav-bar-display-menu: none;
+
     --side-nav-list-item-display-label: block;
   }
 }
@@ -110,9 +93,6 @@ body {
 @media (min-width: 1280px) {
   :root {
     --app-font-size: 16px;
-    --side-nav-width: 5rem;
-    --nav-bar-display-menu: none;
-    --side-nav-list-item-display-label: block;
   }
 }
 
