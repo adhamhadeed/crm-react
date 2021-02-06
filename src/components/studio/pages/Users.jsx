@@ -4,6 +4,7 @@ import Boxes from "./../../common/boxes/Boxes";
 import UserTable from "./../tables/UserTable";
 import Loading from "./../../common/Loading";
 import PageHeader from "./../../common/PageHeader";
+import Logger from "./../../../logger/Logger";
 
 const header = "users";
 const Users = () => {
@@ -29,7 +30,7 @@ const Users = () => {
       const { data } = await UserService.getUsers();
       setUsers(data);
     } catch (err) {
-      console.log(err.message);
+      Logger.log(err.message);
     } finally {
       setIsLoading(false);
     }
