@@ -15,6 +15,7 @@ html {
   --side-nav-list-item-icon-padding: 0.5rem;
   --side-nav-slider-width: 15.63rem;
   --side-nav-list-item-display-label: block;
+
   /* nav bar */
   --nav-bar-display-menu: block;
 }
@@ -129,6 +130,7 @@ body {
   position: relative;
 }
 .nav-bar .menu-icon i {
+  font-size: 1.56rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -193,6 +195,25 @@ body {
   left: var(--side-nav-width);
 }
 
+.side-nav-slider .toolbar-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--app-alt-padding) - 14px);
+  box-shadow: var(--app-box-shadow);
+  height: var(--bread-crumb-height);
+}
+.side-nav-slider .toolbar-header button {
+  background-color: transparent;
+  color: var(--app-color);
+  font-size: 0.75rem;
+}
+.side-nav-slider .toolbar-header button:hover {
+  background-color: #f8f8f8;
+  box-shadow: 1px 1px 4px var(--text-shadow-color);
+}
+
 /* table grid */
 .action-button {
   display: flex;
@@ -204,4 +225,9 @@ body {
 }
 .action-button i:hover {
   color: green;
+}
+.flip {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(360deg);
 }

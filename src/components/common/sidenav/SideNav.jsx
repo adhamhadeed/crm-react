@@ -1,37 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import SideNavSlider from "./SideNavSlider";
 import SideNavList from "./SideNavList";
 import { useGlobalContext } from "../../../context/SideNavContext";
 
 const SideNav = (props) => {
+  const sliderRef = useRef(null);
+
   const history = useHistory();
   const { setView: setIsSiteView, items } = useGlobalContext();
   const [toggle, setToggle] = useState(false);
-  const [buttonId, setButtonId] = useState(null);
+  const [selectedButtonId, setSelectedButtonId] = useState(null);
   const toolbarButtons = [
     {
       id: "close",
       label: "Close",
       icon: "fa fa-times",
+      displayAsIcon: true,
       onClick: (e) => handleCloseButton(e),
     },
     {
       id: "add",
       label: "Add",
       icon: "fa fa-plus",
+      displayAsIcon: true,
       onClick: (e) => handleAddButton(e),
     },
     {
       id: "edit",
       label: "Edit",
       icon: "fa fa-pencil",
+      displayAsIcon: true,
       onClick: (e) => handleEditButton(e),
     },
     {
       id: "delete",
       label: "Delete",
       icon: "fa fa-trash",
+      displayAsIcon: true,
       onClick: (e) => handleDeleteButton(e),
     },
   ];
@@ -50,25 +56,6 @@ const SideNav = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history.location.pathname]);
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     data: [],
-  //     items: this.props.items,
-  //     slideIn: false,
-  //     selectedSideNavBtnId: "examples",
-  //     selectedSliderNavBtnId: null,
-
-  //   };
-  // }
-
-  // hanldeDataClick = (btn) => {
-  //   if (["examples", "components"].includes(btn.id)) {
-  //     this.toggleMenu(btn);
-  //   } else {
-  //     this.changeRoute(btn);
-  //   }
-  // };
   const handleCloseButton = (e) => {
     setToggle(false);
   };
@@ -81,54 +68,43 @@ const SideNav = (props) => {
   const handleDeleteButton = (e) => {
     console.log("delete");
   };
-  //const toggleMenu = (btn) => {
-  //   let { selectedSideNavBtnId, slideIn } = this.state;
-  //   if (selectedSideNavBtnId !== btn.id) {
-  //     if (!slideIn) slideIn = !slideIn;
-  //   } else {
-  //     slideIn = !slideIn;
-  //   }
-  //   this.setState((prevState) => ({
-  //     ...prevState,
-  //     selectedSideNavBtnId: btn.id,
-  //     slideIn,
-  //   }));
-  // };
 
   const changeRoute = (btn) => {
-    // const { selectedSideNavBtnId } = this.state;
-    // if (selectedSideNavBtnId !== btn.id) {
-    //   this.setState((prevState) => ({
-    //     ...prevState,
-    //     selectedSideNavBtnId: btn.id,
-    //     slideIn: false,
-    //   }));
     history.push(btn.path);
-    //}
   };
 
   const handleClick = (btn) => {
-    setButtonId(btn.id);
-    if (btn.isRedirect) {
-      changeRoute(btn);
-      setToggle(false);
-    } else {
+    if (sliderRef.current) sliderRef.current.classList.remove("flip");
+
+    if (btn.isRedirect || btn.id === selectedButtonId || !toggle) {
+      if (btn.isRedirect) changeRoute(btn);
       setToggle(!toggle);
+    } else {
+      // slider already open and cliked over other button
+      setTimeout(() => {
+        if (sliderRef.current) sliderRef.current.classList.add("flip");
+      }, 0);
     }
+    setSelectedButtonId(btn.id);
+  };
+  // get toolbar buttons based on buttonID
+  const getToolBarButtons = () => {
+    return selectedButtonId === "modules"
+      ? toolbarButtons.splice(0, 1)
+      : toolbarButtons;
   };
 
-  const getToolBarButtons = () => {
-    if (buttonId === "modules") {
-      return toolbarButtons.splice(0, 1);
-    }
-    return toolbarButtons;
-  };
   return (
     <>
       <div className="side-nav">
         <SideNavList items={items} onClick={handleClick} />
       </div>
-      <SideNavSlider toggle={toggle} toolbarButtons={getToolBarButtons()} />
+
+      <SideNavSlider
+        toggle={toggle}
+        toolbarButtons={getToolBarButtons()}
+        ref={sliderRef}
+      />
     </>
   );
 };

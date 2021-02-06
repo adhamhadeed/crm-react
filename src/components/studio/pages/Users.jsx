@@ -8,7 +8,16 @@ import PageHeader from "./../../common/PageHeader";
 const header = "users";
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const [openPopup, setOpenPopup] = useState(false);
   const [loading, setIsLoading] = useState(true);
+  const toolbarButtons = [
+    {
+      id: "add",
+      label: "New User",
+      icon: "fa fa-user-plus",
+      onClick: () => openAddUserPopup(),
+    },
+  ];
   const boxes = [
     { id: 1, icon: "fa fa-users", label: "Total Users" },
     { id: 2, icon: "fa fa-user", label: "Regular User" },
@@ -25,7 +34,9 @@ const Users = () => {
       setIsLoading(false);
     }
   };
-
+  const openAddUserPopup = () => {
+    setOpenPopup(true);
+  };
   const addUser = async (user) => {
     const newUser = await UserService.addUser(user);
     setUsers(newUser, ...users);
@@ -51,7 +62,11 @@ const Users = () => {
     <div className="page">
       {!loading ? (
         <>
-          <PageHeader icon="fa fa-users" header={header} />
+          <PageHeader
+            icon="fa fa-users"
+            header={header}
+            toolbarButtons={toolbarButtons}
+          />
           <div className="page-layout">
             <Boxes list={boxes} />
             <UserTable

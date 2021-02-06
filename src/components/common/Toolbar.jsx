@@ -5,16 +5,16 @@ import Button from "./../common/Button";
 
 const Toolbar = ({ buttons }) => {
   return (
-    <div className=" toolbar-header">
+    <div className="toolbar-header">
       {buttons &&
-        buttons.map(({ id, icon, label, onClick }) => (
+        buttons.map(({ id, icon, label, onClick, ...rest }) => (
           <Button
             key={id}
             name={id}
             icon={icon}
             label={label}
             onClick={onClick}
-            displayAsIcon
+            {...rest}
           />
         ))}
     </div>
