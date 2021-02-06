@@ -117,13 +117,3 @@
   top: 50%;
   left: 50%;
 }
-
-.aa {
-  position: absolute;
-  height: 5px;
-  bottom: 0px;
-  left: 0;
-  right: 0;
-  background-color: red;
-  z-index: calc(var(--app-zindex) + 2);
-}

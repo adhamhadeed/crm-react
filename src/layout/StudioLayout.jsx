@@ -17,7 +17,6 @@ const StudioLayout = (props) => {
       <div className="main-content studio">
         <div className="content">{props.children}</div>
       </div>
-      <div className="aa"></div>
     </>
   );
 };

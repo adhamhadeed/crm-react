@@ -12,7 +12,6 @@ const StyledButton = styled.button`
   color: #fff;
   border: none;
   outline: none;
-  margin-right: 5px;
   min-width: 40px;
   min-height: 35px;
   transition: all 0.4s;

@@ -35,17 +35,21 @@ const Users = () => {
       setIsLoading(false);
     }
   };
+
   const openAddUserPopup = () => {
     setOpenPopup(true);
   };
+
   const addUser = async (user) => {
     const newUser = await UserService.addUser(user);
     setUsers(newUser, ...users);
   };
+
   const deleteUser = (userId) => {
     const usersList = users.filter((user) => user.id !== userId);
     setUsers(usersList);
   };
+
   const editUser = (userId) => {
     if (userId) {
       const index = users.findIndex((user) => user.id === userId);
