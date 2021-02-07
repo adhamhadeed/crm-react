@@ -2,18 +2,19 @@ html {
   font-size: var(--app-font-size);
 }
 
+/* body forn size 16px  */
 :root {
-  /* nav-bar */
-  --nav-bar-height: 3.4375rem;
+  /* nav-bar*/
+  --nav-bar-height: 3.43em;
 
   /* bread-crumb */
-  --bread-crumb-height: 3rem;
+  --bread-crumb-height: 2.5em;
 
   /* side-nav */
-  --side-nav-width: 5rem;
+  --side-nav-width: 5em;
   --side-nav-list-item-height: 4.35em;
-  --side-nav-list-item-icon-padding: 0.5rem;
-  --side-nav-slider-width: 15.63rem;
+  --side-nav-list-item-icon-padding: 0.5em;
+  --side-nav-slider-width: 18.72em;
   --side-nav-list-item-display-label: block;
 
   /* nav bar */
@@ -30,6 +31,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--app-font-family);
+  /* 16px */
+  font-size: 0.45em;
   overflow: hidden;
 }
 /* change scroll bar in chrome for big screens only*/
@@ -57,25 +60,27 @@ body {
   background-color: transparent;
 }
 
-@media (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   /* smartphones, iPhone, portrait 480x320 phones */
   :root {
-    --app-font-size: 8px;
+    /* --app-font-size: 18px; */
     --side-nav-list-item-display-label: none;
+    /* --app-font-size: 18px; */
   }
 }
 
 /* | */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   :root {
-    --app-font-size: 12px;
+    /* --app-font-size: 12px; */
+    /* --app-font-size: 16px; */
   }
 }
 /* |--> */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   :root {
-    --app-font-size: 14px;
-
+    /* --app-font-size: 14px; */
+    /* --app-font-size: 14px; */
     --side-nav-list-item-display-label: block;
   }
 }
@@ -84,14 +89,16 @@ body {
 
 @media (min-width: 1025px) {
   :root {
-    --app-font-size: 14px;
+    /* --app-font-size: 14px; */
     --side-nav-list-item-display-label: block;
+    /* --app-font-size: 14px; */
   }
 }
 /* big landscape tablets, laptops, and desktops */
 @media (min-width: 1280px) {
   :root {
-    --app-font-size: 16px;
+    /* --app-font-size: 200%;
+    --app-font-size: 16px; */
   }
 }
 
@@ -109,7 +116,6 @@ body {
 .content {
   height: calc(100% - var(--bread-crumb-height));
   padding: var(--app-alt-padding);
-  font-size: var(--app-content-font-size);
 }
 .nav-bar {
   width: 100%;
@@ -130,11 +136,11 @@ body {
   position: relative;
 }
 .nav-bar .menu-icon i {
-  font-size: 1.56rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 2em;
 }
 .nav-bar .user-info {
   padding-right: var(--app-alt-padding);
@@ -143,12 +149,11 @@ body {
   align-items: center;
 }
 .nav-bar .user-info i {
-  padding-right: 0.5rem;
-  font-size: 1.25rem;
+  padding-right: 0.5em;
 }
 .nav-bar .user-info span {
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 0.75em;
 }
 .side-nav {
   height: calc(100% - var(--nav-bar-height));
@@ -158,7 +163,6 @@ body {
   z-index: calc(var(--app-zindex) - 1);
   overflow-y: auto;
   overflow-x: hidden;
-  font-size: var(--app-side-nav-font-size);
 }
 
 .side-nav-list-item {
@@ -200,14 +204,14 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: calc(var(--app-alt-padding) - 14px);
+  padding: 0 0.5em 0 0.5em;
   box-shadow: var(--app-box-shadow);
   height: var(--bread-crumb-height);
 }
 .side-nav-slider .toolbar-header button {
   background-color: transparent;
   color: var(--app-color);
-  font-size: 0.75rem;
+  font-size: 0.813em;
 }
 .side-nav-slider .toolbar-header button:hover {
   background-color: #f8f8f8;

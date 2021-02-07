@@ -4,14 +4,12 @@
   --app-pdding: 0px;
   --app-margin: 0px;
   --app-transition: 0.4s;
-  --app-alt-padding: 20px;
-  --app-alt-margin: 20px;
+  --app-alt-padding: 0.56rem;
+  --app-alt-margin: 0.56rem;
   --app-box-sizing: "box-border";
   --app-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.1);
   /* fonts */
-  --app-font-size: 100%;
-  --app-side-nav-font-size: 100%;
-  --app-content-font-size: 100%;
+  --app-font-size: calc(1em + 1vw);
   --app-font-family: "Roboto", "Segoe UI", "sans-serif";
 
   /* color this may removed later on*/
