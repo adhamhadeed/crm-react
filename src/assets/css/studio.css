@@ -1,10 +1,10 @@
 :root {
   --page-header-height: 2.81em;
   /* --page-header-max-height: 50px; */
-  --box-height: 6.25em;
+  --box-height: 5em;
   --box-width: 12.5em;
-  --box-max-width: 350px;
-  --box-min-width: 100px;
+  --box-max-width: 21.875em;
+  --box-min-width: 6.25em;
 
   --text-shadow-color: #ccc;
   --border-color: #f0f0f0;
