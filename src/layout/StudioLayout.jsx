@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import ThemesContext from "./../context/ThemesContext";
 import { THEMES, getTheme } from "./../themes";
-import SideNav from "../components/common/sidenav/SideNav";
 
 const StudioLayout = (props) => {
   const { toggleTheme } = useContext(ThemesContext);
@@ -12,12 +11,9 @@ const StudioLayout = (props) => {
   }, []);
 
   return (
-    <>
-      <SideNav />
-      <div className="main-content studio">
-        <div className="content">{props.children}</div>
-      </div>
-    </>
+    <div className="main-content studio">
+      <div className="content">{props.children}</div>
+    </div>
   );
 };
 

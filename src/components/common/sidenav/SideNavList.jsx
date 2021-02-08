@@ -1,12 +1,20 @@
 import React from "react";
-import NavListItem from "./NavListItem";
+import { useGlobalContext } from "../../../context/SideNavContext";
+import ListItem from "./../ListItem";
 
 const SideNavList = ({ items, onClick }) => {
+  const { navSelectedItemId } = useGlobalContext();
   return (
     <div className="side-nav-list">
-      {items.map((item) => (
-        <NavListItem key={item.id} btn={item} onClick={onClick} />
-      ))}
+      {items &&
+        items.map((item) => (
+          <ListItem
+            key={item.id}
+            item={item}
+            onClick={onClick}
+            isSelected={navSelectedItemId === item.id}
+          />
+        ))}
     </div>
   );
 };

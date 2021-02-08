@@ -19,6 +19,9 @@ html {
 
   /* nav bar */
   --nav-bar-display-menu: block;
+
+  --slider-list-items-padding-right: 0.625em;
+  --slider-list-items-padding: 0.5em;
 }
 
 * {
@@ -69,8 +72,6 @@ body {
 
 /* | */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  :root {
-  }
 }
 /* |--> */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -88,8 +89,6 @@ body {
 }
 /* big landscape tablets, laptops, and desktops */
 @media (min-width: 1280px) {
-  :root {
-  }
 }
 
 .main-app {
@@ -155,7 +154,7 @@ body {
   overflow-x: hidden;
 }
 
-.side-nav-list-item {
+.side-nav-list .list-item {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -167,14 +166,18 @@ body {
   border-bottom: 1px solid;
   position: relative;
 }
-.side-nav-list-item i {
+.side-nav-list .list-item i {
   padding: var(--side-nav-list-item-icon-padding);
 }
-.side-nav-list-item span {
+.side-nav-list .list-item span {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.6em;
   display: var(--side-nav-list-item-display-label);
+}
+.side-nav-list .list-item.selected {
+  border-left-width: 0.3125em;
+  border-left-style: solid;
 }
 .side-nav-slider {
   width: var(--side-nav-slider-width);
@@ -202,12 +205,30 @@ body {
   background-color: transparent;
   color: var(--app-color);
   font-size: 0.813em;
+  width: 3.75em;
+  height: 1.875em;
 }
 .side-nav-slider .toolbar-header button:hover {
   background-color: #f8f8f8;
   box-shadow: 1px 1px 4px var(--text-shadow-color);
 }
-
+/* list-item - slider-list */
+.slider-list-items {
+  height: calc(100% - var(--bread-crumb-height));
+  padding: var(--app-alt-padding);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.slider-list-items .list-item {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: var(--slider-list-items-padding);
+  font-size: 0.82em;
+}
+.slider-list-items .list-item i {
+  padding-right: var(--slider-list-items-padding-right);
+}
 /* table grid */
 .action-button {
   display: flex;

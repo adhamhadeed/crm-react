@@ -94,7 +94,7 @@
 .box div.box-icon {
   border-right: 1px solid var(--border-color);
   position: relative;
-  width: 6.25em;
+  width: 5.5em;
 }
 .box div.box-info {
   flex: 1;
@@ -111,11 +111,11 @@
 }
 .box .box-user-num {
   text-shadow: 2px 2px var(--text-shadow-color);
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .box div.box-icon i {
-  font-size: 4em;
+  font-size: 3em;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;

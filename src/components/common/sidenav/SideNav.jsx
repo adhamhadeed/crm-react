@@ -1,16 +1,24 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import SideNavSlider from "./SideNavSlider";
 import SideNavList from "./SideNavList";
 import { useGlobalContext } from "../../../context/SideNavContext";
 
 const SideNav = (props) => {
+  console.log("sidenav");
   const sliderRef = useRef(null);
-
   const history = useHistory();
-  const { setView: setIsSiteView, items } = useGlobalContext();
-  const [toggle, setToggle] = useState(false);
-  const [selectedButtonId, setSelectedButtonId] = useState(null);
+  const {
+    setView: setIsSiteView,
+    isSiteView,
+    navItems,
+    navSelectedItemId,
+    sliderSelectedItemId,
+    setNavItemClicked,
+    setSliderItemClicked,
+  } = useGlobalContext();
+
   const toolbarButtons = [
     {
       id: "close",
@@ -41,8 +49,10 @@ const SideNav = (props) => {
       onClick: (e) => handleDeleteButton(e),
     },
   ];
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  const [toggleSlider, setToggleSlider] = useState(false);
   const onHistoryPathChanged = () => {
+    console.log("datachanged");
     setIsSiteView(
       !(
         history.location.pathname &&
@@ -57,7 +67,7 @@ const SideNav = (props) => {
   }, [history.location.pathname]);
 
   const handleCloseButton = (e) => {
-    setToggle(false);
+    setToggleSlider(false);
   };
   const handleAddButton = (e) => {
     console.log("add");
@@ -69,19 +79,20 @@ const SideNav = (props) => {
     console.log("delete");
   };
 
-  const changeRoute = (btn) => {
-    history.push(btn.path);
+  const changeRoute = (path) => {
+    history.push(path);
   };
-
-  const handleClick = (btn) => {
+  // click over nav item
+  const handleSideNavClick = (item) => {
+    console.log(item);
     if (sliderRef.current) sliderRef.current.classList.remove("flip");
 
-    if (btn.isRedirect || btn.id === selectedButtonId || !toggle) {
-      if (btn.isRedirect) {
-        changeRoute(btn);
-        setToggle(false);
+    if (item.isRedirect || item.id === navSelectedItemId || !toggleSlider) {
+      if (item.isRedirect) {
+        changeRoute(item.path);
+        setToggleSlider(false);
       } else {
-        setToggle(!toggle);
+        setToggleSlider(!toggleSlider);
       }
     } else {
       // slider already open and cliked over other button
@@ -89,11 +100,21 @@ const SideNav = (props) => {
         if (sliderRef.current) sliderRef.current.classList.add("flip");
       }, 0);
     }
-    setSelectedButtonId(btn.id);
+    if (item.id !== navSelectedItemId) setNavItemClicked(item.id);
   };
-  // get toolbar buttons based on buttonID
+  // click over slider item
+  const handleSiderNavClick = (item) => {
+    if (item.id !== sliderSelectedItemId) {
+      let route = !isSiteView ? "/studio" : "";
+      changeRoute(`${route}/${navSelectedItemId}/${item.id}`);
+      setSliderItemClicked(item.id);
+      setToggleSlider(false);
+    }
+  };
+
+  // get toolbar buttons list based on buttonID
   const getToolBarButtons = () => {
-    return selectedButtonId === "modules"
+    return navSelectedItemId === "modules"
       ? toolbarButtons.splice(0, 1)
       : toolbarButtons;
   };
@@ -101,13 +122,13 @@ const SideNav = (props) => {
   return (
     <>
       <div className="side-nav">
-        <SideNavList items={items} onClick={handleClick} />
+        <SideNavList items={navItems} onClick={handleSideNavClick} />
       </div>
-
       <SideNavSlider
-        toggle={toggle}
+        toggle={toggleSlider}
         toolbarButtons={getToolBarButtons()}
         ref={sliderRef}
+        onClick={handleSiderNavClick}
       />
     </>
   );

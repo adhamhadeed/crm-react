@@ -16,17 +16,17 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: ${(props) => props.theme.boxShadow}; 
     color:${(props) => props.theme.navTextColor};
   }
-  .side-nav-list-item{
+  .side-nav-list .list-item{
     border-bottom-color: ${(props) => props.theme.sideNavBorderBottomColor};
   }
   a, a:hover{
     color: ${(props) => props.theme.linkColor};
   }
-  .side-nav .side-nav-list-item:hover{
+  .side-nav .side-nav-list .list-item:hover{
     background-color:${(props) => props.theme.linkHoverBgColor};
   }
-  .side-nav .side-nav-list-item.selected{
-   border-left:${(props) => props.theme.selectedListItemBgColor};
+  .side-nav .side-nav-list .list-item.selected{
+   border-left-color:${(props) => props.theme.selectedListItemBgColor};
   }
   .side-nav-slider{
     background-color:${(props) => props.theme.sideNavSliderBgColor};

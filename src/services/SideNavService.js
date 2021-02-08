@@ -11,7 +11,7 @@ const getItems = (view) => {
         },
         {
           id: "navigation",
-          icon: "fa fa-list-alt",
+          icon: "fa fa-location-arrow",
           path: "/",
           label: "Navigation",
           isRedirect: false,
@@ -38,6 +38,13 @@ const getItems = (view) => {
           isRedirect: true,
         },
         {
+          id: "applicationProperties",
+          icon: "fa fa-snowflake-o",
+          path: "/studio/applicationProperties",
+          label: "App. Prop",
+          isRedirect: true,
+        },
+        {
           id: "settings",
           icon: "fa fa-cogs",
           path: "/studio/settings",
@@ -57,7 +64,7 @@ const getItems = (view) => {
 
         {
           id: "navigation",
-          icon: "fa fa-list-alt",
+          icon: "fa fa-location-arrow",
           path: "/",
           label: "Navigation",
           isRedirect: false,
