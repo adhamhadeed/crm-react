@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { withRouter, useParams } from "react-router-dom";
 import SideNavSlider from "./SideNavSlider";
 import SideNavList from "./SideNavList";
 import { useGlobalContext } from "../../../context/SideNavContext";
 
-const SideNav = (props) => {
+const SideNav = ({ history, match }) => {
+  console.log(history);
   console.log("sidenav");
   const sliderRef = useRef(null);
-  const history = useHistory();
   const {
     setView: setIsSiteView,
     isSiteView,
@@ -52,7 +51,6 @@ const SideNav = (props) => {
 
   const [toggleSlider, setToggleSlider] = useState(false);
   const onHistoryPathChanged = () => {
-    console.log("datachanged");
     setIsSiteView(
       !(
         history.location.pathname &&
@@ -62,6 +60,7 @@ const SideNav = (props) => {
   };
 
   useEffect(() => {
+    console.log("onHistoryPathChanged");
     onHistoryPathChanged();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history.location.pathname]);
@@ -133,4 +132,4 @@ const SideNav = (props) => {
     </>
   );
 };
-export default SideNav;
+export default withRouter(SideNav);
