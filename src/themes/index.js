@@ -1,19 +1,17 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 
 const BASIC = {
-  backgroundColor: "#f8f8f8",
-  alternativeBgColor: "#fff",
-  sideNavBgColor: "#fff",
-  sideNavSliderBgColor: "#fff",
-  navBarBgColor: "#fff",
-  linkColor: "#4a8bc2",
-  linkHoverBgColor: "#f8f8f8",
-  boxShadow: "0 1px 15px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.1)",
-  bodyTextColor: "#4a8bc2",
-  navTextColor: "#4a8bc2",
-  selectedListItemBgColor: "#4a8bc2",
-  sideNavBorderBottomColor: "#f0f0f0",
-  pageBgColor: "#fff",
+  body_bg_alt_color: "var(--app-body-alt-bg-color)",
+  body_bg_color: "var(--app-body-bg-color)",
+  box_shadow: "var(--app-box-shadow)",
+  body_text_color: "var(--app-color)",
+  border_color: "var(--app-border-color)",
+  content_text_color: "var(--app-content-text-color)",
+  link_color: "var(--app-link-color)",
+  link_bg_hover_color: "var(--app-link-bg-hover-color)",
+  side_nav_selected_bg_color: "var(--app-side-nav-selected-bg-color)",
+  side_nav_border_bg_color: "var(--app-side-nav-border-bg-color)",
+  text_shadow: "var(--app-text-shadow)",
 };
 const DARK = {
   ...BASIC,

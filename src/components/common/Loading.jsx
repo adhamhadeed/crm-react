@@ -23,7 +23,7 @@ const Loading = (props) => {
         className="d-flex justify-content-center align-items-center"
         style={{ position: "absolute", left: "50%", top: "40%" }}
       >
-        <div className="spinner-border text-primary" role="status">
+        <div className="BarLoader text-primary" role="status">
           <span className="sr-only">Loading...</span>
         </div>
       </div>

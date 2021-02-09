@@ -1,28 +1,48 @@
 :root {
   --page-header-height: 2.81em;
-  /* --page-header-max-height: 50px; */
   --box-height: 5em;
   --box-width: 12.5em;
   --box-max-width: 21.875em;
   --box-min-width: 6.25em;
+  --slider-toolbar-height: var(--bread-crumb-height);
+}
 
-  --app-color: #4a8bc2;
-  --text-shadow-color: #ccc;
-  --border-color: #f0f0f0;
+.main-content.studio {
+  --bread-crumb-height: 0px;
+}
+.side-nav-slider .toolbar-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5em 0 0.5em;
+  box-shadow: var(--app-box-shadow);
+  height: var(--slider-toolbar-height);
+}
+.side-nav-slider .toolbar-header button {
+  background-color: transparent;
+  color: var(--app-color);
+  font-size: 0.813em;
+  width: 3.75em;
+  height: 1.875em;
 }
 
 .page {
   height: 100%;
   border-radius: var(--app-border-radius);
+  background-color: var(--app-body-alt-bg-color);
+  box-shadow: var(--app-box-shadow);
 }
 .page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--app-alt-padding);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--app-border-color);
   height: var(--page-header-height);
-  /* max-height: var(--page-header-max-height); */
+
   border-radius: var(--app-border-radius) var(--app-border-radius) 0 0;
 
   background-image: -moz-linear-gradient(top, #fdfdfd, #f4f4f4);
@@ -48,7 +68,7 @@
 }
 .page-header span.page-name {
   font-size: 1.25em;
-  text-shadow: 2px 2px var(--text-shadow-color);
+  text-shadow: var(--app-text-shadow);
 }
 .page-header .page-action button {
   text-transform: uppercase;
@@ -75,7 +95,9 @@
 
 .box {
   height: var(--box-height);
-  border: 1px solid var(--border-color);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--app-border-color);
   border-radius: var(--app-border-radius);
   display: flex;
   flex: 1 1 6.25em;
@@ -92,7 +114,9 @@
   box-shadow: inset var(--app-box-shadow);
 }
 .box div.box-icon {
-  border-right: 1px solid var(--border-color);
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: var(--app-border-color);
   position: relative;
   width: 5.5em;
 }
@@ -110,7 +134,7 @@
   font-size: inherit;
 }
 .box .box-user-num {
-  text-shadow: 2px 2px var(--text-shadow-color);
+  text-shadow: var(--app-text-shadow);
   font-size: 3em;
 }
 

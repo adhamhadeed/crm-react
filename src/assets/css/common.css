@@ -20,6 +20,7 @@ html {
   /* nav bar */
   --nav-bar-display-menu: block;
 
+  /*slider */
   --slider-list-items-padding-right: 0.625em;
   --slider-list-items-padding: 0.5em;
 }
@@ -99,9 +100,7 @@ body {
   height: 100%;
   margin-left: var(--side-nav-width);
 }
-.main-content.studio {
-  --bread-crumb-height: 0px;
-}
+
 .content {
   height: calc(100% - var(--bread-crumb-height));
   padding: var(--app-alt-padding);
@@ -192,26 +191,6 @@ body {
   left: var(--side-nav-width);
 }
 
-.side-nav-slider .toolbar-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0.5em 0 0.5em;
-  box-shadow: var(--app-box-shadow);
-  height: var(--bread-crumb-height);
-}
-.side-nav-slider .toolbar-header button {
-  background-color: transparent;
-  color: var(--app-color);
-  font-size: 0.813em;
-  width: 3.75em;
-  height: 1.875em;
-}
-.side-nav-slider .toolbar-header button:hover {
-  background-color: #f8f8f8;
-  box-shadow: 1px 1px 4px var(--text-shadow-color);
-}
 /* list-item - slider-list */
 .slider-list-items {
   height: calc(100% - var(--bread-crumb-height));
@@ -238,9 +217,7 @@ body {
   cursor: pointer;
   color: red;
 }
-.action-button i:hover {
-  color: green;
-}
+
 .flip {
   transition: transform 0.8s;
   transform-style: preserve-3d;
