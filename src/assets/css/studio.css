@@ -4,13 +4,14 @@
   --box-width: 12.5em;
   --box-max-width: 21.875em;
   --box-min-width: 6.25em;
-  --slider-toolbar-height: var(--bread-crumb-height);
+
+  --slider-toolbar-height: 2.5em;
 }
 
 .main-content.studio {
   --bread-crumb-height: 0px;
 }
-.side-nav-slider .toolbar-header {
+.side-nav-slider .toolbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -19,18 +20,19 @@
   box-shadow: var(--app-box-shadow);
   height: var(--slider-toolbar-height);
 }
-.side-nav-slider .toolbar-header button {
+.side-nav-slider .toolbar button {
   background-color: transparent;
   color: var(--app-color);
   font-size: 0.813em;
   width: 3.75em;
   height: 1.875em;
+  color: var(--app-all-color);
 }
 
 .page {
   height: 100%;
   border-radius: var(--app-border-radius);
-  background-color: var(--app-body-alt-bg-color);
+  background-color: var(--app-content-bg-color);
   box-shadow: var(--app-box-shadow);
 }
 .page-header {

@@ -51,6 +51,7 @@ const SideNav = ({ history, match }) => {
 
   const [toggleSlider, setToggleSlider] = useState(false);
   const onHistoryPathChanged = () => {
+    setToggleSlider(false);
     setIsSiteView(
       !(
         history.location.pathname &&

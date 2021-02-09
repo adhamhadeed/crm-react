@@ -1,5 +1,3 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-
 const BASIC = {
   body_bg_alt_color: "var(--app-body-alt-bg-color)",
   body_bg_color: "var(--app-body-bg-color)",
@@ -10,22 +8,26 @@ const BASIC = {
   link_color: "var(--app-link-color)",
   link_bg_hover_color: "var(--app-link-bg-hover-color)",
   side_nav_selected_bg_color: "var(--app-side-nav-selected-bg-color)",
-  side_nav_border_bg_color: "var(--app-side-nav-border-bg-color)",
+  side_nav_selected_color: "var(--app-side-nav-selected-color)",
+  side_nav_border_bottom_color: "var(--app-side-nav-border-bottom-color)",
   text_shadow: "var(--app-text-shadow)",
 };
 const DARK = {
   ...BASIC,
-  linkHoverBgColor: "#089308",
-  sideNavSliderBgColor: "#343a40",
-  linkColor: "#fff",
-  navBarBgColor: "#0f680f",
-  sideNavBgColor: "#0f680f",
-  navTextColor: "#ffff",
-  selectedListItemBgColor: "#089308",
+  link_bg_hover_color: "#089308",
+  link_color: "#fff",
+  side_nav_selected_bg_color: "#089308",
 };
 
 const STUDIO = {
   ...BASIC,
+
+  // body_bg_alt_color: "#6f42c1",
+  // content_text_color: "#6f42c1",
+  // body_text_color: "#fff",
+  // side_nav_border_bottom_color: "#432875",
+  // side_nav_selected_bg_color: "#a077eb",
+  // link_bg_hover_color: "#a077eb",
 };
 
 const THEMES = {

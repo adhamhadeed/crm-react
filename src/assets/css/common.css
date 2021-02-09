@@ -7,9 +7,6 @@ html {
   /* nav-bar*/
   --nav-bar-height: 3.43em;
 
-  /* bread-crumb */
-  --bread-crumb-height: 2.5em;
-
   /* side-nav */
   --side-nav-width: 5em;
   --side-nav-list-item-height: 4.35em;
@@ -89,7 +86,10 @@ body {
   }
 }
 /* big landscape tablets, laptops, and desktops */
-@media (min-width: 1280px) {
+@media (min-width: 1920px) {
+  html {
+    font-size: 35.2px;
+  }
 }
 
 .main-app {
@@ -152,7 +152,11 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
+.list-item {
+  transition: var(--app-transition);
+  border-radius: var(--app-border-radius);
+  cursor: pointer;
+}
 .side-nav-list .list-item {
   width: 100%;
   display: flex;
@@ -164,6 +168,7 @@ body {
   transition: var(--app-transition);
   border-bottom: 1px solid;
   position: relative;
+  border-radius: 0px;
 }
 .side-nav-list .list-item i {
   padding: var(--side-nav-list-item-icon-padding);
@@ -174,10 +179,7 @@ body {
   font-size: 0.6em;
   display: var(--side-nav-list-item-display-label);
 }
-.side-nav-list .list-item.selected {
-  border-left-width: 0.3125em;
-  border-left-style: solid;
-}
+
 .side-nav-slider {
   width: var(--side-nav-slider-width);
   height: calc(100% - var(--nav-bar-height));

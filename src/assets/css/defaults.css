@@ -17,10 +17,12 @@
   --app-body-bg-color: #f8f8f8;
   --app-body-alt-bg-color: #fff;
   --app-content-text-color: #4a8bc2;
+  --app-content-bg-color: #fff;
   --app-link-color: #4a8bc2;
   --app-link-bg-hover-color: #f8f8f8;
   --app-side-nav-selected-bg-color: #4a8bc2;
-  --app-side-nav-border-bg-color: #f0f0f0;
+  --app-side-nav-selected-color: #fff;
+  --app-side-nav-border-bottom-color: #f0f0f0;
   --app-border-color: #f0f0f0;
   --app-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.1);
   --app-text-shadow: 2px 2px #ccc;

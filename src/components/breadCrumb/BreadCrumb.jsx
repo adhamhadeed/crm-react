@@ -14,8 +14,9 @@ const BreadCrumb = (props) => {
   const [selectedId, setSelectedId] = useState(1);
   const squares = [
     { id: 1, color: "#4a8bc2" },
+    { id: 2, color: "#6f42c1" },
     { id: 3, color: "#343a40" },
-    { id: 4, color: "#28a745" },
+    { id: 4, color: "#fd7e14" },
   ];
   const onSquareSelect = (squareId) => {
     if (selectedId !== squareId) setSelectedId(squareId);

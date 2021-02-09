@@ -1,3 +1,8 @@
+:root {
+  /* bread-crumb */
+  --bread-crumb-height: 2.5em;
+}
+
 .bread-crumb {
   padding: var(--app-alt-padding);
   height: var(--bread-crumb-height);
@@ -9,7 +14,8 @@
 }
 
 .bread-crumb .bread-crumb-sqaure i {
-  padding: 0.4rem;
+  padding: 0.5em;
   cursor: pointer;
   transition: all 0.4ms;
+  font-size: 0.813em;
 }

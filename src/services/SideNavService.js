@@ -70,6 +70,13 @@ const getItems = (view) => {
           isRedirect: false,
         },
         {
+          id: "analytics",
+          icon: "fa fa-line-chart",
+          path: "/analytics",
+          label: "Analytics",
+          isRedirect: true,
+        },
+        {
           id: "reports",
           icon: "fa fa-database",
           path: "/reports",
