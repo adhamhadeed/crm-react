@@ -3,8 +3,8 @@ import { NavReducer, ACTIONS } from "./../reducer/NavReducer";
 
 const initState = {
   isSiteView: true,
-  navSelectedItemId: "dashboard",
-  sliderSelectedItemId: "dashboard",
+  navSelectedItemId: null,
+  sliderSelectedItemId: null,
   navItems: [],
   sliderItems: [],
 };
@@ -25,23 +25,10 @@ const SideNavProvider = ({ children }) => {
     });
   };
 
-  const setView = (isSiteView) => {
+  const setMenuState = (menuConfiguration) => {
     dispatch({
-      type: ACTIONS.SET_VIEW,
-      payload: isSiteView,
-    });
-  };
-
-  const setNavItemClicked = (itemId) => {
-    dispatch({
-      type: ACTIONS.SET_NAV_SELECTED_ITEM,
-      payload: itemId,
-    });
-  };
-  const setSliderItemClicked = (itemId) => {
-    dispatch({
-      type: ACTIONS.SET_SLIDER_SELECTED_ITEM,
-      payload: itemId,
+      type: ACTIONS.SET_MENU_STATE,
+      payload: menuConfiguration,
     });
   };
 
@@ -52,13 +39,12 @@ const SideNavProvider = ({ children }) => {
   useEffect(() => {
     getSliderItems();
   }, []);
+
   return (
     <SideNavContext.Provider
       value={{
         ...state,
-        setView,
-        setNavItemClicked,
-        setSliderItemClicked,
+        setMenuState,
       }}
     >
       {children}

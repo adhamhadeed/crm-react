@@ -1,5 +1,25 @@
+:root {
+  --app-modal-header-bg-color: #4a8bc2;
+}
+
 .rdt_TableBody {
 }
 .rdg {
   height: inherit !important;
+}
+.modal-dialog .modal-header {
+  background-color: var(--app-modal-header-bg-color);
+  padding: 0.5rem 0.5rem;
+  color: var(--app-body-alt-bg-color);
+}
+.modal-dialog .modal-header button {
+  color: #fff;
+  opacity: 1;
+}
+.modal-dialog .modal-header button:focus {
+  outline: none;
+}
+.modal-dialog .modal-footer {
+  background-color: #f8f8f8;
+  padding: 0.5rem;
 }

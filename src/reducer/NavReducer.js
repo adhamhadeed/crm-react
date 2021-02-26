@@ -5,8 +5,7 @@ const ACTIONS = {
   GET_NAV_ITEMS: "get_nav_items",
   GET_SLIDER_ITEMS: "get_slider_items",
   SET_VIEW: "set_view",
-  SET_NAV_SELECTED_ITEM: "set_nav_selected_item",
-  SET_SLIDER_SELECTED_ITEM: "set_slider_selected_item",
+  SET_MENU_STATE: "set_menu_state",
 };
 const NavReducer = (state, action) => {
   switch (action.type) {
@@ -22,21 +21,34 @@ const NavReducer = (state, action) => {
         ...state,
         sliderItems,
       };
-    case ACTIONS.SET_NAV_SELECTED_ITEM:
+    case ACTIONS.SET_MENU_STATE:
+      let navSelectedId = "dashboard";
+      let sliderSelectedId = "dashboard";
+      const {
+        isSiteView,
+        navSelectedItemId,
+        sliderSelectedItemId,
+      } = action.payload;
+      navSelectedId =
+        !navSelectedItemId || navSelectedItemId.length === 0
+          ? navSelectedId
+          : navSelectedItemId;
+      sliderSelectedId =
+        !sliderSelectedItemId || sliderSelectedItemId.length === 0
+          ? sliderSelectedId
+          : sliderSelectedItemId;
       return {
         ...state,
-        navSelectedItemId: action.payload,
+        isSiteView,
+        navSelectedItemId: navSelectedId,
+        sliderSelectedItemId: sliderSelectedId,
       };
-    case ACTIONS.SET_SLIDER_SELECTED_ITEM:
+    case ACTIONS.SET_TOGGLE:
       return {
         ...state,
-        sliderSelectedItemId: action.payload,
+        toggleSlider: action.payload,
       };
-    case ACTIONS.SET_VIEW:
-      return {
-        ...state,
-        isSiteView: action.payload,
-      };
+
     default:
   }
 };

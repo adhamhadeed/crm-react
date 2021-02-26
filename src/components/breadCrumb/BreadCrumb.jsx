@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Square from "./../common/Square";
+import ThemesContext from "./../../context/ThemesContext";
+import { getTheme, THEMES } from "../../themes";
 
 const Crumb = styled.div`
   background-color: #fff;
@@ -11,28 +13,28 @@ const Crumb = styled.div`
 `;
 
 const BreadCrumb = (props) => {
-  const [selectedId, setSelectedId] = useState(1);
+  const { themeName, toggleTheme } = useContext(ThemesContext);
   const squares = [
-    { id: 1, color: "#4a8bc2" },
-    { id: 2, color: "#6f42c1" },
-    { id: 3, color: "#343a40" },
-    { id: 4, color: "#fd7e14" },
+    { id: 1, color: "#4a8bc2", theme: "BASIC" },
+    { id: 2, color: "#6f42c1", theme: "PURBLE" },
+    { id: 3, color: "#343a40", theme: "DARK" },
+    { id: 4, color: "#fd7e14", theme: "ORANGE" },
   ];
-  const onSquareSelect = (squareId) => {
-    if (selectedId !== squareId) setSelectedId(squareId);
+  const onSquareClick = ({ theme }) => {
+    toggleTheme({ theme: getTheme(THEMES[theme]), themeName: theme });
   };
   return (
     <Crumb className="bread-crumb">
       <div className="bread-crumb-path">
-        <i className="fa fa-home"></i> Dashboard
+        {/* <i className="fa fa-home"></i> Dashboard */}
       </div>
       <div className="bread-crumb-sqaure">
         {squares.map((square) => (
           <Square
             key={square.id}
-            onSquareSelect={onSquareSelect}
-            selectedId={selectedId}
-            {...square}
+            onSquareClick={onSquareClick}
+            selected={square.theme === themeName}
+            square={square}
           />
         ))}
       </div>

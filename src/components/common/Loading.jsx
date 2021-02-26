@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { BounceLoader, BarLoader, SyncLoader } from "react-spinners";
 
 const Loader = styled.div`
   position: fixed;
@@ -7,25 +8,25 @@ const Loader = styled.div`
   width: 100%;
   height: 100%;
   left: 0;
-  z-index: 125;
+  z-index: 100;
   top: 0;
   opacity: 0.5;
-  div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  transition: opacity 0.15s linear;
 `;
 const Loading = (props) => {
   return (
     <Loader>
       <div
-        className="d-flex justify-content-center align-items-center"
-        style={{ position: "absolute", left: "50%", top: "40%" }}
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
       >
-        <div className="BarLoader text-primary" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
+        {/* <BounceLoader size={40} color="var(--app-color)" loading />
+        <BarLoader size={40} color="var(--app-color)" loading /> */}
+        <SyncLoader size={20} color="var(--app-color)" loading={true} />
       </div>
     </Loader>
   );

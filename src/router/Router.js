@@ -6,8 +6,27 @@ import SiteLayout from "./../layout/SiteLayout";
 import StudioRouter from "./../components/studio/Router";
 import SiteRouter from "./../components/site/Router";
 
+const AppRouter = ({ component: Component, layout: Layout, ...rest }) => {
+  <Route
+    {...rest}
+    render={(props) => (
+      <Layout>
+        <Component {...props}></Component>
+      </Layout>
+    )}
+  ></Route>;
+};
 const Router = (props) => {
   return (
+    // <Switch>
+    //   <AppRouter exact path="/" layout={SiteLayout} component={SiteRouter} />
+    //   <AppRouter
+    //     exact
+    //     path="/studio"
+    //     layout={StudioLayout}
+    //     component={StudioRouter}
+    //   />
+    // </Switch>
     <Switch>
       <Route path="/studio">
         <StudioLayout>

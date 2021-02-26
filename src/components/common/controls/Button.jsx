@@ -2,14 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const StyledButton = styled.button`
+const Wrapper = styled.button`
   padding: 5px 8px;
   border-radius: 5px;
   background-color: ${(props) =>
     props.danger ? "#dc3545" : props.warning ? "#ffc107" : "#4a8bc2"};
   border-color: ${(props) =>
     props.danger ? "#dc3545" : props.warning ? "#ffc107" : "#4a8bc2"};
-  color: #fff;
+  color: ${(props) => (props.warning ? "#333333" : "#fff")};
+  text-transform: uppercase;
   border: none;
   outline: none;
   min-width: 40px;
@@ -47,27 +48,26 @@ const Button = ({
   icon,
   label,
   onClick,
-  transparentBgColor = false,
-  displayAsIcon = false,
+  transparentBgColor,
+  displayAsIcon,
   ...rest
 }) => {
   return (
-    <StyledButton
-      id="myStyledButton"
-      name="myStyledButton"
-      onClick={onClick}
-      {...rest}
-    >
+    <Wrapper id="std-button" name="std-button" onClick={onClick} {...rest}>
       <i className={icon}></i> {!displayAsIcon && <span>{label}</span>}
-    </StyledButton>
+    </Wrapper>
   );
 };
-StyledButton.propTypes = {
+Wrapper.propTypes = {
   onClick: PropTypes.func.isRequired,
   label: PropTypes.string,
+  displayAsIcon: PropTypes.bool,
+  transparentBgColor: PropTypes.bool,
 };
-StyledButton.defaultProps = {
-  label: "Click Me",
+Wrapper.defaultProps = {
+  label: "",
   cssClassName: "btn btn-primary",
+  displayAsIcon: false,
+  transparentBgColor: false,
 };
 export default Button;

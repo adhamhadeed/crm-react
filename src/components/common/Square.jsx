@@ -1,15 +1,16 @@
 import React from "react";
 
-const Square = ({ color, id, selectedId, onSquareSelect }) => {
-  const getSelected = (id) => {
-    return id === selectedId ? "selected" : "";
+const Square = ({ square, onSquareClick }) => {
+  const { color, id, selected } = square;
+  const getSelected = () => {
+    return selected ? "selected" : "";
   };
   return (
     <i
-      className={`fa fa-square ${getSelected(id)}`}
+      className={`fa fa-square ${getSelected()}`}
       id={id}
       style={{ color: color }}
-      onClick={() => onSquareSelect(id)}
+      onClick={() => onSquareClick(square)}
     ></i>
   );
 };

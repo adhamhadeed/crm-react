@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "./../common/Button";
+import Button from "./controls/Button";
+import PropTypes from "prop-types";
 
 const Toolbar = ({ buttons }) => {
   return (
@@ -17,6 +18,10 @@ const Toolbar = ({ buttons }) => {
         ))}
     </div>
   );
+};
+
+Toolbar.propTypes = {
+  buttons: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Toolbar;

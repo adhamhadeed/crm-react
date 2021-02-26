@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   .main-content{
     color:${(props) => props.theme.content_text_color};
    }
-  nav{
+  .nav-bar{
     background-color: ${(props) => props.theme.body_bg_alt_color};
     box-shadow: ${(props) => props.theme.box_shadow}; 
     color:${(props) => props.theme.body_text_color};
@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: ${(props) => props.theme.box_shadow}; 
     color:${(props) => props.theme.body_text_color};
   }
-  .side-nav-list .list-item{
+  .side-nav .side-nav-list .list-item{
     border-bottom-color: ${(props) => props.theme.side_nav_border_bottom_color};
   }
   a, a:hover{
@@ -38,5 +38,11 @@ export const GlobalStyle = createGlobalStyle`
     background-color:${(props) => props.theme.body_bg_alt_color};
     box-shadow: ${(props) => props.theme.box_shadow}; 
   }
- 
+  .side-nav-slider .list-item.selected:hover,
+  .side-nav-slider .list-item.selected{
+    background-color:${(props) => props.theme.link_bg_hover_color};   
+    color:${(props) => props.theme.body_text_color};
+    border-left-color:${(props) => props.theme.body_text_color};   
+  }
+
 `;

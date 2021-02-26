@@ -8,7 +8,6 @@ const SiteLayout = (props) => {
 
   useEffect(() => {
     toggleTheme(getTheme(THEMES.BASIC));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="main-content">

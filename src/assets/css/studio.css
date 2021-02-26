@@ -1,7 +1,7 @@
 :root {
   --page-header-height: 2.81em;
   --box-height: 5em;
-  --box-width: 12.5em;
+  --box-width: 350px;
   --box-max-width: 21.875em;
   --box-min-width: 6.25em;
 
@@ -19,6 +19,7 @@
   padding: 0 0.5em 0 0.5em;
   box-shadow: var(--app-box-shadow);
   height: var(--slider-toolbar-height);
+  position: relative;
 }
 .side-nav-slider .toolbar button {
   background-color: transparent;
@@ -26,7 +27,6 @@
   font-size: 0.813em;
   width: 3.75em;
   height: 1.875em;
-  color: var(--app-all-color);
 }
 
 .page {
@@ -83,9 +83,10 @@
   height: calc(100% - var(--page-header-height));
 }
 .page-layout .custom-table {
-  height: calc(100% - var(--app-alt-padding) - var(--box-height));
+  height: 100%;
+  /* calc(100% - var(--app-alt-padding) - var(--box-height)); */
 }
-.boxes {
+/* .boxes {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -93,7 +94,7 @@
   flex-wrap: wrap;
   gap: var(--app-alt-padding);
   padding-bottom: var(--app-alt-padding);
-}
+} */
 
 .box {
   height: var(--box-height);
@@ -104,11 +105,8 @@
   display: flex;
   flex: 1 1 6.25em;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  max-width: var(--box-max-width);
-  min-width: var(--box-min-width);
 }
 .box > div {
   padding: 0.8em;
@@ -124,7 +122,6 @@
 }
 .box div.box-info {
   flex: 1;
-  text-align: center;
   text-transform: uppercase;
   font-weight: bold;
   display: flex;

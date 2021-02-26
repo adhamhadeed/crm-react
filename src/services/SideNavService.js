@@ -7,6 +7,7 @@ const getItems = (view) => {
           icon: "fa fa-tachometer",
           path: "/studio",
           label: "Dashboard",
+          name: "Dashboard",
           isRedirect: true,
         },
         {
@@ -14,6 +15,7 @@ const getItems = (view) => {
           icon: "fa fa-location-arrow",
           path: "/",
           label: "Navigation",
+          name: "Navigation",
           isRedirect: false,
         },
         {
@@ -21,6 +23,7 @@ const getItems = (view) => {
           icon: "fa fa-list",
           path: "/",
           label: "Components",
+          name: "Components",
           isRedirect: false,
         },
         {
@@ -28,6 +31,7 @@ const getItems = (view) => {
           icon: "fa fa-cubes",
           path: "/",
           label: "Modules",
+          name: "Modules",
           isRedirect: false,
         },
         {
@@ -35,6 +39,7 @@ const getItems = (view) => {
           icon: "fa fa-users",
           path: "/studio/users",
           label: "Users",
+          name: "Users",
           isRedirect: true,
         },
         {
@@ -42,6 +47,7 @@ const getItems = (view) => {
           icon: "fa fa-snowflake-o",
           path: "/studio/applicationProperties",
           label: "App. Prop",
+          name: "Application Properties",
           isRedirect: true,
         },
         {
@@ -49,6 +55,7 @@ const getItems = (view) => {
           icon: "fa fa-cogs",
           path: "/studio/settings",
           label: "Settings",
+          name: "Settings",
           isRedirect: true,
         },
       ];

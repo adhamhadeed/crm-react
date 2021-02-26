@@ -29,9 +29,21 @@ const STUDIO = {
   // side_nav_selected_bg_color: "#a077eb",
   // link_bg_hover_color: "#a077eb",
 };
+const PURBLE = {
+  ...BASIC,
+
+  body_bg_alt_color: "#6f42c1",
+  content_text_color: "#6f42c1",
+  body_text_color: "#fff",
+  side_nav_border_bottom_color: "#432875",
+  side_nav_selected_bg_color: "#a077eb",
+  link_bg_hover_color: "#a077eb",
+};
 
 const THEMES = {
   BASIC: "basic",
+  ORANGE: "orange",
+  PURBLE: "purble",
   DARK: "dark",
   STUDIO: "studio",
 };
@@ -41,6 +53,8 @@ const getTheme = (themeName) => {
       return DARK;
     case THEMES.STUDIO:
       return STUDIO;
+    case THEMES.PURBLE:
+      return PURBLE;
     default:
       return BASIC;
   }

@@ -8,25 +8,34 @@ import Router from "./router/Router";
 import ThemesContext from "./context/ThemesContext";
 import NavBar from "./components/common/navbar/NavBar";
 import { SideNavProvider } from "./context/SideNavContext";
+import { AppPropertiesProvider } from "./context/ApplicationProprtiesContext";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const [theme, setTheme] = useState(getTheme(THEMES.BASIC));
-  const toggleTheme = (theme) => {
-    setTheme(theme);
+  const [{ theme, themeName }, setTheme] = useState({
+    theme: getTheme(THEMES.BASIC),
+    themeName: THEMES.BASIC,
+  });
+  const toggleTheme = ({ themeName, theme }) => {
+    console.log(theme);
+    setTheme({ theme: getTheme(THEMES[themeName]), themeName: themeName });
   };
 
   return (
-    <ThemesContext.Provider value={{ toggleTheme: toggleTheme }}>
+    <ThemesContext.Provider
+      value={{ toggleTheme: toggleTheme, themeName: themeName }}
+    >
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <SideNavProvider>
-          <ToastContainer />
-          <NavBar />
-          <Layout>
-            <Router />
-          </Layout>
-        </SideNavProvider>
+        <AppPropertiesProvider>
+          <SideNavProvider>
+            <ToastContainer />
+            <NavBar />
+            <Layout>
+              <Router />
+            </Layout>
+          </SideNavProvider>
+        </AppPropertiesProvider>
       </ThemeProvider>
     </ThemesContext.Provider>
   );
