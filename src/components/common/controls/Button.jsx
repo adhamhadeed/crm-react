@@ -14,7 +14,7 @@ const Wrapper = styled.button`
   border: none;
   outline: none;
   min-width: 40px;
-  min-height: 35px;
+  min-height: 25px;
   transition: all 0.4s;
   cursor: pointer;
   &:hover {
