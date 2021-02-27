@@ -6,44 +6,60 @@ import Loading from "../../../common/Loading";
 import useFetch from "../../../../customHooks/useFetch";
 import PageHeader from "./../../../common/PageHeader";
 import { toast } from "react-toastify";
+import { AddEditDialog } from "./../dialogs/Index";
 
 const Users = () => {
+  const [open, setOpen] = useState(false);
   const [response, setResponse, isLoading, errors] = useFetch(
     UserService.getUsers,
     "users",
     []
   );
-  // const [editableUser, setEditableUser] = useState(null);
+  const [editableUser, setEditableUser] = useState(null);
 
   const toolbarButtons = [
     {
       id: "add",
       label: "New User",
       icon: "fa fa-user-plus",
-      //onClick: () => openDialog(),
+      onClick: () => addNewUser(),
     },
   ];
+
   const boxes = [
     { id: 1, icon: "fa fa-users", label: "Total Users" },
     { id: 2, icon: "fa fa-user", label: "Regular User" },
     { id: 3, icon: "fa fa-user-secret", label: "Admin Users" },
   ];
 
+  const openDialog = () => {
+    setOpen(true);
+  };
+  const closeDialog = () => {
+    setOpen(false);
+  };
+
+  const addNewUser = () => {
+    setEditableUser(null);
+    openDialog();
+  };
+
   const saveUser = (user) => {
     console.log(user);
+    closeDialog();
   };
 
   const deleteUser = (user) => {
     if (user) {
       const users = response.filter((usr) => usr.id !== user.id);
       setResponse(users);
-      toast.info("User delete successfully!");
+      toast.info("Great! User deleted successfully!");
     }
   };
 
   const editUser = (user) => {
-    // setEditableUser(user.row);
-    // openDialog();
+    setEditableUser(user.row);
+    openDialog();
   };
   if (errors) return <div>Error during process...</div>;
   return (
@@ -61,19 +77,18 @@ const Users = () => {
               data={response}
               deleteUser={deleteUser}
               editUser={editUser}
-              saveUser={saveUser}
             />
           </div>
         </div>
       ) : (
         <Loading />
       )}
-      {/* <AddEditDialog
+      <AddEditDialog
         editableUser={editableUser}
-        open={isOpen}
+        open={open}
         close={closeDialog}
-        onSave={addUser}
-      /> */}
+        onSave={saveUser}
+      />
     </>
   );
 };

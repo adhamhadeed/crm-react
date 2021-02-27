@@ -19,7 +19,49 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--app-font-family);
   /* 16px */
-  font-size: 0.88em;
+
   overflow: hidden;
   height: 100%;
+}
+
+@media (max-width: 768px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  :root {
+    --side-nav-list-item-display-label: none;
+    --side-nav-width: 0px;
+    --app-font-size: 0.625rem;
+  }
+  .boxes {
+    flex-direction: column;
+  }
+  /* .page-layout {
+    overflow-y: auto;
+  } */
+}
+
+/* | */
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  :root {
+    --app-font-size: 0.75rem;
+  }
+}
+/* |--> */
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  :root {
+    --side-nav-width: 0px;
+    --app-font-size: 0.75rem;
+  }
+}
+
+/* big landscape tablets, laptops, and desktops */
+
+@media (min-width: 1025px) {
+  :root {
+    /* --app-font-size: 0.875rem; */
+  }
+}
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1800px) {
+  :root {
+  }
 }

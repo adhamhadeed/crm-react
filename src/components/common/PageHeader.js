@@ -10,7 +10,7 @@ const PageHeader = ({ icon, header, toolbarButtons }) => {
         <i className={icon}></i>
         <span className="page-name">{header}</span>
       </div>
-      <div className="page-action">
+      <div className="page-toolabr">
         <Toolbar buttons={toolbarButtons} />
       </div>
     </div>

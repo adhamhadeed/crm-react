@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import Input from "../../../../common/controls/Input";
+import Input from "../../../common/controls/Input";
 
 const AddEditForm = ({ data, setSubmit, onSave }) => {
   const submitRef = useRef(null);

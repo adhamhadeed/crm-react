@@ -9,8 +9,8 @@
   --app-alt-margin: 1.11rem;
 
   /* fonts */
-  --app-font-size: 0.5vw calc(1em + 1vw);
-  /* --app-font-size: 18px; */
+  /* --app-font-size: 16px; */
+  --app-font-size: 100%;
   --app-font-family: "Roboto", "Segoe UI", "sans-serif";
 
   /* colors */

@@ -132,9 +132,9 @@ const SideNav = ({ history, match }) => {
           items={navItems}
           render={(item) => (
             <SideNavList
+              key={item.id}
               item={item}
               onClick={handleSideNavClick}
-              selectedItem={navClickedItem}
             />
           )}
         />
@@ -144,7 +144,7 @@ const SideNav = ({ history, match }) => {
         toolbarButtons={getToolBarButtons()}
         ref={sliderRef}
         onClick={handleSiderNavClick}
-        selectedItem={navClickedItem}
+        navKey={navClickedItem}
       />
     </>
   );

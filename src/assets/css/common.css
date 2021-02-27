@@ -173,32 +173,3 @@
   transform-style: preserve-3d;
   transform: rotateX(360deg);
 }
-
-@media (max-width: 768px) {
-  /* smartphones, iPhone, portrait 480x320 phones */
-  :root {
-    --side-nav-list-item-display-label: none;
-    --side-nav-width: 0px;
-  }
-  .boxes {
-    flex-direction: column;
-  }
-  .page-layout {
-    overflow-y: auto;
-  }
-}
-
-/* | */
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-}
-/* |--> */
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-}
-
-/* big landscape tablets, laptops, and desktops */
-
-@media (min-width: 1025px) {
-}
-/* big landscape tablets, laptops, and desktops */
-@media (min-width: 1920px) {
-}

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { ConfirmationDialog } from "../../../common/dialogs/Index";
-import { AddEditDialog } from "../dialogs/Index";
 import Table from "../../../common/Table";
 
 const UserTable = (props) => {
-  const { data, editUser, deleteUser, saveUser } = props;
-  // const [openUserDialog, setOpenUserDialog] = useState(false);
+  const { data, editUser, deleteUser } = props;
   const [confirmationDialog, setConfirmationDialg] = useState({
     open: false,
     title: "Delete User",
@@ -100,7 +98,6 @@ const UserTable = (props) => {
         setConfirmationDialg={setConfirmationDialg}
         close={() => closeConfirmationDialog()}
       />
-      <AddEditDialog {...props} />
     </>
   );
 };

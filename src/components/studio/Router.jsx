@@ -48,7 +48,7 @@ const Router = () => {
         path="/studio/applicationproperties"
         component={ApplicationProperties}
       />
-      <Route exact path="/studio/settings" component={PageTemplate}>
+      <Route exact path="/studio/settings" component={Settings}>
         <Settings />
       </Route>
       <Route exact path="/studio/users" component={Users} />

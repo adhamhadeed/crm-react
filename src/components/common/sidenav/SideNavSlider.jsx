@@ -5,7 +5,7 @@ import { useGlobalContext } from "../../../context/SideNavContext";
 import Toolbar from "./../Toolbar";
 
 const SideNavSlider = React.forwardRef(
-  ({ toggle, toolbarButtons, onClick, selectedItem }, ref) => {
+  ({ toggle, toolbarButtons, onClick, navKey }, ref) => {
     const { sliderItems } = useGlobalContext();
 
     const getItems = (items) => {
@@ -27,16 +27,18 @@ const SideNavSlider = React.forwardRef(
         <Toolbar buttons={toolbarButtons} />
         <div className="slider-list-items">
           {sliderItems.map((items) => {
-            const listKey = getComponentKey(items);
+            const compNavKey = getComponentKey(items);
             return (
               <List
-                showList={selectedItem === listKey}
+                key={compNavKey}
+                showList={compNavKey === navKey}
                 items={getItems(items)}
                 render={(item) => (
                   <SideNavList
+                    key={item.id}
                     item={item}
                     onClick={onClick}
-                    selectedItem={selectedItem}
+                    navKey={navKey}
                   />
                 )}
               />

@@ -3,11 +3,11 @@ import { useGlobalContext } from "../../../context/SideNavContext";
 import PropTypes from "prop-types";
 import ListItem from "./../ListItem";
 
-const SideNavList = ({ item, onClick, selectedItem }) => {
+const SideNavList = ({ item, onClick, navKey }) => {
   const { navSelectedItemId, sliderSelectedItemId } = useGlobalContext();
 
   const getProperty = (item) => {
-    if (selectedItem === "_nav") return navSelectedItemId;
+    if (navKey === "_nav") return navSelectedItemId;
     return sliderSelectedItemId;
   };
   return (
@@ -16,18 +16,18 @@ const SideNavList = ({ item, onClick, selectedItem }) => {
         key={item.id}
         item={item}
         onClick={onClick}
-        isSelected={selectedItem === item.id}
+        isSelected={getProperty(item) === item.id}
       />
     </div>
   );
 };
 SideNavList.propTypes = {
-  selectedItem: PropTypes.string.isRequired,
+  navKey: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired,
 };
 
 SideNavList.defaultProps = {
-  listKey: "_nav",
+  navKey: "_nav",
 };
 export default SideNavList;

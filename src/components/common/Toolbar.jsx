@@ -6,16 +6,7 @@ const Toolbar = ({ buttons }) => {
   return (
     <div className="toolbar">
       {buttons &&
-        buttons.map(({ id, icon, label, onClick, ...rest }) => (
-          <Button
-            key={id}
-            name={id}
-            icon={icon}
-            label={label}
-            onClick={onClick}
-            {...rest}
-          />
-        ))}
+        buttons.map((button) => <Button key={button.id} {...button} />)}
     </div>
   );
 };

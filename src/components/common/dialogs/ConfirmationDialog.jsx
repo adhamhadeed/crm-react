@@ -9,7 +9,7 @@ const ConfirmationDialog = (props) => {
 
   return (
     <Dialog
-      render={() => {
+      render={(buttons) => {
         return buttons.map((btn) => <Button key={btn.id} {...btn} />);
       }}
       {...props.confirmationDialog}

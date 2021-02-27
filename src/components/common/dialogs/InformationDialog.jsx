@@ -7,7 +7,12 @@ const InformationDialog = (props) => {
     return <Button label="OK" onClick={props.close} />;
   };
   return (
-    <Dialog {...props} renderFooter={renderFooter}>
+    <Dialog
+      {...props}
+      render={(buttons) => {
+        return buttons.map((btn) => <Button key={btn.id} {...btn} />);
+      }}
+    >
       {props.msg}
     </Dialog>
   );
