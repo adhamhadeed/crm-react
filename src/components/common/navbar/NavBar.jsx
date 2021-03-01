@@ -5,37 +5,37 @@ const Wrapper = styled.nav`
   background: #fff;
   width: 100%;
   display: flex;
-  height: 3.43em;
+  height: var(--nav-bar-height);
   justify-content: space-between;
   align-items: center;
+
   position: relative;
-  .menu-icon {
-    width: var(--side-nav-width);
+  .nav-menu-icon {
+    width: 4em;
     text-align: center;
     height: 100%;
     box-shadow: var(--app-box-shadow);
-    display: var(--nav-bar-display-menu);
     position: relative;
   }
-  .menu-icon i {
+  .nav-menu-icon i {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2em;
+    font-size: 1.5em;
   }
-  .user-info {
+  .nav-user-info {
     padding-right: var(--app-alt-padding);
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .user-info i {
-    padding-right: 0.5em;
-  }
-  .user-info span {
-    font-weight: bold;
     font-size: 0.75em;
+  }
+  .nav-user-info i {
+    padding-right: 0.5rem;
+  }
+  .nav-user-info span {
+    font-weight: bold;
   }
 `;
 
@@ -43,10 +43,10 @@ function NavBar(props) {
   console.log("nvbar");
   return (
     <Wrapper className="nav-bar">
-      <div className="menu-icon">
+      <div className="nav-menu-icon">
         <i className="fa fa-user-circle-o"></i>
       </div>
-      <div className="user-info">
+      <div className="nav-user-info">
         <i className="fa fa-user"></i>
         <span>Welcome: Adham Hadeed</span>
       </div>

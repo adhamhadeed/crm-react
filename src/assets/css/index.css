@@ -1,5 +1,6 @@
 @import "./defaults.css";
 @import "./common.css";
+@import "./components.css";
 @import "./custom.css";
 @import "./site.css";
 @import "./studio.css";
@@ -19,24 +20,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--app-font-family);
   /* 16px */
-
+  font-size: 0.88rem;
   overflow: hidden;
   height: 100vh;
-  min-height: 100vh;
 }
 
+/* change scroll bar in chrome for big screens only*/
+::-ms-clear {
+  display: none; /* removing [x] from MS inputs */
+}
+/* change scroll bar in chrome for big screens only*/
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+::-webkit-scrollbar:vertical {
+  width: 8px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.13);
+  border-radius: 8px;
+  border: 1px solid #fff;
+}
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: transparent;
+}
 .wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: var(--nav-bar-height) auto;
+  grid-auto-rows: var(--nav-bar-height) auto;
   height: 100vh;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
   /* smartphones, iPhone, portrait 480x320 phones */
   :root {
-    --side-nav-list-item-display-label: none;
     --side-nav-width: 0px;
-    --app-font-size: 0.625rem;
+    --app-font-size: 1.125rem;
   }
   .boxes {
     flex-direction: column;
@@ -45,7 +69,19 @@ body {
     overflow-y: auto;
   } */
 }
-
+@media (min-width: 800px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  :root {
+    --side-nav-width: 0px;
+    --app-font-size: 1.125rem;
+  }
+  .boxes {
+    flex-direction: row;
+  }
+  /* .page-layout {
+    overflow-y: auto;
+  } */
+}
 /* | */
 @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
   :root {
@@ -60,18 +96,5 @@ body {
 @media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
   :root {
     --app-font-size: 0.7rem;
-  }
-}
-
-/* big landscape tablets, laptops, and desktops */
-
-@media (min-width: 1025px) {
-  :root {
-    /* --app-font-size: 0.875rem; */
-  }
-}
-/* big landscape tablets, laptops, and desktops */
-@media (min-width: 1800px) {
-  :root {
   }
 }
