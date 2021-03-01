@@ -58,7 +58,7 @@
 }
 .side-nav-slider.slide-in {
   /* left: var(--side-nav-width); */
-  transform: translateX(0);
+  transform: translateX(var(--side-nav-width));
 }
 
 .slider-list-items {

@@ -74,10 +74,18 @@ body {
     overflow-y: auto;
   } */
 }
-
-@media (min-width: 1280px) {
-  html {
-    --app-font-size: 100%;
+/* | */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  :root {
+    --app-font-size: 1rem;
+  }
+}
+/* |--> */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+@media (min-width: 1800px) {
+  :root {
+    --app-font-size: 1rem;
   }
   .nav-menu-icon {
     transform: translateX(0);
