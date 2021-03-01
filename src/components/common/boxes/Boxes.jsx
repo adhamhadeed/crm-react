@@ -29,4 +29,5 @@ const Wrapper = styled.div`
     flex-direction: column;
     grid-template-columns: repeat(2, 1fr);  
   } */
+  font-size: 0.6em;
 `;

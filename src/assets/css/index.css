@@ -58,6 +58,7 @@ body {
 
 @media (max-width: 480px) {
   /* smartphones, iPhone, portrait 480x320 phones */
+
   :root {
     --side-nav-width: 0px;
     --app-font-size: 1.125rem;
@@ -65,36 +66,20 @@ body {
   .boxes {
     flex-direction: column;
   }
+  .nav-menu-icon {
+    transform: translateX(0px);
+  }
+
   /* .page-layout {
     overflow-y: auto;
   } */
 }
-@media (min-width: 800px) {
-  /* smartphones, iPhone, portrait 480x320 phones */
-  :root {
-    --side-nav-width: 0px;
-    --app-font-size: 1.125rem;
+
+@media (min-width: 1280px) {
+  html {
+    --app-font-size: 100%;
   }
-  .boxes {
-    flex-direction: row;
-  }
-  /* .page-layout {
-    overflow-y: auto;
-  } */
-}
-/* | */
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-  :root {
-    --side-nav-width: 0px;
-    --app-font-size: 0.7rem;
-  }
-  body {
-    background-color: red;
-  }
-}
-/* |--> */
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-  :root {
-    --app-font-size: 0.7rem;
+  .nav-menu-icon {
+    transform: translateX(0);
   }
 }

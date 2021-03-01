@@ -10,32 +10,35 @@ const Wrapper = styled.nav`
   align-items: center;
 
   position: relative;
+  z-index: var(--app-zindex);
   .nav-menu-icon {
-    width: 4em;
+    width: var(--nav-bar-left-menu-width);
     text-align: center;
     height: 100%;
     box-shadow: var(--app-box-shadow);
     position: relative;
+    transform: translateX(calc(-2 * var(--nav-bar-left-menu-width)));
   }
   .nav-menu-icon i {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.5em;
   }
+
   .nav-user-info {
     padding-right: var(--app-alt-padding);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.75em;
   }
   .nav-user-info i {
     padding-right: 0.5rem;
   }
   .nav-user-info span {
     font-weight: bold;
+    // font size 12px of bosu wich is 16px;
+    font-size: 0.75em;
   }
 `;
 
@@ -44,7 +47,8 @@ function NavBar(props) {
   return (
     <Wrapper className="nav-bar">
       <div className="nav-menu-icon">
-        <i className="fa fa-user-circle-o"></i>
+        {/* <i className="fa fa-user-circle-o user-icon"></i> */}
+        <i className="fa fa-list list-icon"></i>
       </div>
       <div className="nav-user-info">
         <i className="fa fa-user"></i>

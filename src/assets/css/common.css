@@ -7,18 +7,12 @@
   display: flex;
 }
 .main-content {
-  /* height: 100%;
-  margin-left: var(--side-nav-width); */
   flex: 1;
 }
 
 .content {
-  /* height: calc(100% - var(--bread-crumb-height)); */
   height: 100%;
   padding: var(--app-alt-padding);
-}
-.nav-bar {
-  z-index: var(--app-zindex);
 }
 
 .side-nav {
