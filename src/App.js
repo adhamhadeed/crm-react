@@ -30,10 +30,12 @@ function App() {
         <AppPropertiesProvider>
           <SideNavProvider>
             <ToastContainer />
-            <NavBar />
-            <Layout>
-              <Router />
-            </Layout>
+            <main className="wrapper">
+              <NavBar />
+              <Layout>
+                <Router />
+              </Layout>
+            </main>
           </SideNavProvider>
         </AppPropertiesProvider>
       </ThemeProvider>
