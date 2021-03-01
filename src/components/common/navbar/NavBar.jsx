@@ -37,6 +37,9 @@ const Wrapper = styled.nav`
   }
   .nav-user-info span {
     font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     // font size 12px of bosu wich is 16px;
     font-size: 0.75em;
   }

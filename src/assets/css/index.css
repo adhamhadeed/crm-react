@@ -77,17 +77,35 @@ body {
 /* | */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   :root {
-    --app-font-size: 1rem;
+    --side-nav-list-item-display-label: none;
+    --side-nav-width: 3rem;
+    --app-font-size: 1.125rem;
   }
 }
-/* |--> */
+/* 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-}
-@media (min-width: 1800px) {
   :root {
     --app-font-size: 1rem;
   }
-  .nav-menu-icon {
-    transform: translateX(0);
+} */
+
+@media (min-width: 1280px) {
+  :root {
+    --app-font-size: 1rem;
+  }
+  body {
+    font-size: 1em;
+  }
+}
+@media (min-width: 1800px) {
+  :root {
+    --app-font-size: 1.5rem;
+  }
+  body {
+    font-size: 0.66em;
+  }
+
+  .boxes {
+    font-size: 0.8em !important;
   }
 }

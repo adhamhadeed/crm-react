@@ -5,8 +5,8 @@
   --app-pdding: 0px;
   --app-margin: 0px;
   --app-transition: 0.4s;
-  --app-alt-padding: 1.11rem; /* 20px */
-  --app-alt-margin: 1.11rem;
+  --app-alt-padding: 20px;
+  --app-alt-margin: 20px;
 
   /* fonts */
   /* --app-font-size: 16px; */

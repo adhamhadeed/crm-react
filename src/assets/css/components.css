@@ -1,16 +1,16 @@
 :root {
   /* nav-bar*/
-  --nav-bar-height: 2.5rem;
-  --nav-bar-left-menu-width: 5rem;
+  --nav-bar-height: 2.25rem;
+  --nav-bar-left-menu-width: 5em;
 
   /* side-nav */
-  --side-nav-width: 5rem;
+  --side-nav-width: 5em;
   --side-nav-list-item-height: 4.35em;
   --side-nav-list-item-icon-padding: 0.5em;
-  --side-nav-slider-width: 18.72em;
   --side-nav-list-item-display-label: block;
 
   /*slider */
+  --side-nav-slider-width: 18.72em;
   --slider-list-items-padding-right: 0.625em;
   --slider-list-items-padding: 0.5em;
 }

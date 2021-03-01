@@ -49,7 +49,6 @@
 
 .side-nav-slider {
   width: var(--side-nav-slider-width);
-  /* top: var(--nav-bar-height); */
   position: absolute;
   transform: translateX(-400px);
   /* left: calc((var(--side-nav-slider-width) + var(--side-nav-width)) * -1); */

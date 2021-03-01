@@ -1,8 +1,23 @@
 :root {
   --app-modal-header-bg-color: #4a8bc2;
 }
+.rdg.data-grid {
+  border: 0px;
+  border-top: 1px solid #ddd;
+  color: var(--app-color);
+  font-size: 12px;
+}
+.rdg-row,
+.rdg-header-row {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.rdg-cell {
+  box-shadow: none !important;
+}
 
 .rdt_TableBody {
+  background-color: red;
 }
 .rdg {
   height: inherit !important;

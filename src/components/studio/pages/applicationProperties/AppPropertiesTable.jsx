@@ -33,13 +33,15 @@ const AppPropertiesTable = (props) => {
     },
     {
       key: "action",
-      width: 60,
+      width: 100,
       name: "",
 
       formatter: (row) => (
         <div className="action-button">
           <i className="fa fa-trash"></i>
           <i className="fa fa-pencil"></i>
+          <i className="fa fa-times"></i>
+          <i className="fa fa-undo"></i>
         </div>
       ),
     },

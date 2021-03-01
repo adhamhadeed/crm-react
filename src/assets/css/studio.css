@@ -1,5 +1,5 @@
 :root {
-  --page-header-height: 1.5em;
+  --page-header-height: 3.5em;
   --box-height: 5em;
   --box-width: 350px;
   --box-max-width: 21.875em;
@@ -42,14 +42,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--app-alt-padding);
+  padding: 0 var(--app-alt-padding);
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: var(--app-border-color);
   height: var(--page-header-height);
 
   border-radius: var(--app-border-radius) var(--app-border-radius) 0 0;
-
+  background-color: #f9f9f9;
   background-image: -moz-linear-gradient(top, #fdfdfd, #f4f4f4);
   background-image: -webkit-gradient(
     linear,
@@ -63,9 +63,14 @@
   background-image: linear-gradient(to bottom, #fdfdfd, #f4f4f4);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdfdfd', endColorstr='#fff4f4f4', GradientType=0);
-
+  border-bottom: 1px solid #dbdbdb;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  text-shadow: 0 1px 0 0 1px 0 #fff;
   text-transform: uppercase;
   font-weight: bold;
+  height: var(--page-header-height);
 }
 .page-header .page-title {
   overflow: hidden;
@@ -104,6 +109,7 @@
   border-color: var(--app-border-color);
   border-radius: var(--app-border-radius);
   display: flex;
+  flex: 1 1 6.25em;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;

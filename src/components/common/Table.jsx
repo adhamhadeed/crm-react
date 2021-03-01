@@ -4,6 +4,7 @@ import DataGrid from "react-data-grid";
 const Table = ({ data, columns, ...rest }) => {
   return (
     <DataGrid
+      className="data-grid"
       {...rest}
       columns={columns}
       rows={data}
