@@ -8,9 +8,21 @@
   --side-nav-list-item-height: 4.35em;
   --side-nav-list-item-icon-padding: 0.5em;
   --side-nav-list-item-display-label: block;
+  --slider-toolbar-height: 3.5em;
 
   /*slider */
-  --side-nav-slider-width: 18.72em;
+  --slider-width: 18.72em;
   --slider-list-items-padding-right: 0.625em;
   --slider-list-items-padding: 0.5em;
+
+  /*Template*/
+  --template-header-height: 3.5em;
+
+  /*Box*/
+  --box-height: 5em;
+  --box-width: 350px;
+  --box-max-width: 21.875em;
+  --box-min-width: 6.25em;
+
+  /**/
 }

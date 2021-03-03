@@ -1,6 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Loading from "../../../common/Loading";
-import PageHeader from "./../../../common/PageHeader";
+import {
+  TemplateHeader,
+  TemplateContent,
+} from "./../../../common/template/Index";
 import AppProperitesTable from "./AppPropertiesTable";
 import ApplicationProprtiesContext from "../../../../context/ApplicationProprtiesContext";
 
@@ -18,20 +21,18 @@ const ApplicationProperties = () => {
   ];
   return (
     <>
-      <div className="page">
-        <PageHeader
-          icon="fa fa-snowflake-o"
-          header="application properties"
-          toolbarButtons={toolbarButtons}
-        />
-        {!isLoading ? (
-          <div className="page-layout">
-            <AppProperitesTable data={data} />
-          </div>
-        ) : (
-          <Loading />
-        )}
-      </div>
+      <TemplateHeader
+        icon="fa fa-snowflake-o"
+        header="application properties"
+        toolbarButtons={toolbarButtons}
+      />
+      {!isLoading ? (
+        <TemplateContent>
+          <AppProperitesTable data={data} />
+        </TemplateContent>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };

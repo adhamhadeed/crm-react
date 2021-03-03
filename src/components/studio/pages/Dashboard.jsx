@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Boxes from "./../../common/boxes/Boxes";
 import UserService from "./../../../services/UserService";
 import ProductService from "./../../../services/ProductService";
+import { TemplateContent } from "./../../common/template/Index";
 import axios from "axios";
 import Loading from "./../../common/Loading";
 
@@ -51,12 +52,12 @@ function Dashboard(props) {
   }, []);
 
   return (
-    <div className="page">
+    <>
       {isLoading && <Loading />}
-      <div className="page-layout">
+      <TemplateContent>
         <Boxes list={boxes} />
-      </div>
-    </div>
+      </TemplateContent>
+    </>
   );
 }
 

@@ -3,7 +3,7 @@ import { THEMES, getTheme } from "./themes/index";
 import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./themes/global";
-import Layout from "./layout/Layout";
+import AppLayout from "./layout/AppLayout";
 import Router from "./router/Router";
 import ThemesContext from "./context/ThemesContext";
 import NavBar from "./components/common/navbar/NavBar";
@@ -32,9 +32,9 @@ function App() {
             <ToastContainer />
             <main className="wrapper">
               <NavBar />
-              <Layout>
+              <AppLayout>
                 <Router />
-              </Layout>
+              </AppLayout>
             </main>
           </SideNavProvider>
         </AppPropertiesProvider>

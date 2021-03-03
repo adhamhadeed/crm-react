@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
 import { withRouter } from "react-router-dom";
-import SideNavSlider from "./SideNavSlider";
+import Slider from "./Slider";
 import SideNavList from "../list/SideNavList";
 import { useGlobalContext } from "../../../context/SideNavContext";
 import List from "../list/List";
-
-// import Modal from "../Modal";
 
 const SideNav = ({ history, match }) => {
   const sliderRef = useRef(null);
@@ -127,7 +126,7 @@ const SideNav = ({ history, match }) => {
 
   return (
     <>
-      <div className="side-nav">
+      <Wrapper className="side-nav">
         <List
           items={navItems}
           render={(item) => (
@@ -138,8 +137,8 @@ const SideNav = ({ history, match }) => {
             />
           )}
         />
-      </div>
-      <SideNavSlider
+      </Wrapper>
+      <Slider
         toggle={toggleSlider}
         toolbarButtons={getToolBarButtons()}
         ref={sliderRef}
@@ -150,3 +149,24 @@ const SideNav = ({ history, match }) => {
   );
 };
 export default withRouter(SideNav);
+
+const Wrapper = styled.nav`
+  width: var(--side-nav-width);
+  transition: var(--app-transition);
+  z-index: calc(var(--app-zindex) - 1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  @media (max-width: 500px) {
+    --side-nav-list-item-display-label: none;
+    --side-nav-width: 0;
+  }
+  @media (min-width: 501px) {
+    --side-nav-list-item-display-label: none;
+    --side-nav-width: 3em;
+  }
+  @media (min-width: 768px) {
+    --side-nav-list-item-display-label: block;
+    --side-nav-width: 5em;
+    --app-font-size: 1.125rem;
+  }
+`;

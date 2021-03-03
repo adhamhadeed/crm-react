@@ -4,7 +4,7 @@
   --app-zindex: 5;
   --app-pdding: 0px;
   --app-margin: 0px;
-  --app-transition: 0.4s;
+  --app-transition: all 0.8s ease-out;
   --app-alt-padding: 20px;
   --app-alt-margin: 20px;
 

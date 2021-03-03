@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import PageHeader from "./../../../common/PageHeader";
+import {
+  TemplateHeader,
+  TemplateContent,
+} from "./../../../common/template/Index";
 import { Input, Button } from "./../../../common/controls/Index";
 
 const Settings = ({ data }) => {
@@ -21,9 +24,9 @@ const Settings = ({ data }) => {
   };
 
   return (
-    <div className="page">
-      <PageHeader icon="fa fa-cogs" header="settings" />
-      <div className="page-layout">
+    <>
+      <TemplateHeader icon="fa fa-cogs" header="settings" />
+      <TemplateContent>
         <form onSubmit={onSubmit}>
           <div className="form-group ">
             <Input
@@ -134,8 +137,8 @@ const Settings = ({ data }) => {
             <Button label="Save Settings" icon="fa fa-save" />
           </div>
         </form>
-      </div>
-    </div>
+      </TemplateContent>
+    </>
   );
 };
 export default Settings;

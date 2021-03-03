@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "../../../../common/controls/Button";
-import Dialog from "../../../../common/dialogs/Dialog";
-import AddEditForm from "../../users/AddEditForm";
+import Button from "../../../common/controls/Button";
+import Dialog from "../../../common/dialogs/Dialog";
+import AddEditForm from "./AddEditForm";
 
 const AddEditDialog = (props) => {
   const { onSave, close, editableUser } = props;

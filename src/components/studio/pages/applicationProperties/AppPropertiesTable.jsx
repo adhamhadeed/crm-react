@@ -46,11 +46,7 @@ const AppPropertiesTable = (props) => {
       ),
     },
   ];
-  return (
-    <div className="custom-table">
-      <Table data={props.data} columns={columns} />
-    </div>
-  );
+  return <Table data={props.data} columns={columns} />;
 };
 
 export default AppPropertiesTable;

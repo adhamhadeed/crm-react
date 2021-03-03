@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  background: #fff;
+  background: var(--app-body-alt-bg-color);
   width: 100%;
 `;
 

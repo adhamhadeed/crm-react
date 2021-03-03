@@ -6,51 +6,33 @@ import Users from "./pages/users/Users";
 import ApplicationProperties from "./pages/applicationProperties/ApplicationProperties";
 import Components from "./pages/Components";
 import Navigation from "./pages/navigation/Navigation";
-import Companies from "./modules/Companies";
+import Companies from "./modules/companies/Companies";
 import Orders from "./modules/Orders";
 import Products from "./modules/Products";
 import Contacts from "./modules/Contacts";
 import Currencies from "./modules/Currencies";
 import NotFound from "./../../components/pages/NotFound";
-import PageTemplate from "./templates/PageTemplate";
 
 const Router = () => {
   return (
     <Switch>
       <Route exact path="/studio/components/:id" component={Components} />
+
       <Route exact path="/studio/navigation/:id" component={Navigation} />
+
       <Route exact path="/studio/modules/companies" component={Companies} />
       <Route exact path="/studio/modules/currencies" component={Currencies} />
       <Route exact path="/studio/modules/orders" component={Orders} />
       <Route exact path="/studio/modules/products" component={Products} />
       <Route exact path="/studio/modules/contacts" component={Contacts} />
-      {/* <Route
-        exact
-        path="/studio/applicationproperties"
-        render={(props) => (
-          <PageTemplate
-            comp={<ApplicationProperties />}
-            pageKey="applicationProperties"
-            {...props}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/studio/settings"
-        render={(props) => (
-          <PageTemplate comp={<Settings />} pageKey="settings" {...props} />
-        )}
-      /> */}
+
       <Route exact path="/studio/users" component={Users} />
       <Route
         exact
         path="/studio/applicationproperties"
         component={ApplicationProperties}
       />
-      <Route exact path="/studio/settings" component={Settings}>
-        <Settings />
-      </Route>
+      <Route exact path="/studio/settings" component={Settings} />
       <Route exact path="/studio/users" component={Users} />
       <Route exact path="/studio/notFound" component={NotFound} />
       <Route exact path="/studio" component={Dashboard} />

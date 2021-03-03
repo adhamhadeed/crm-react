@@ -1,6 +1,6 @@
 @import "./defaults.css";
-@import "./common.css";
 @import "./components.css";
+@import "./common.css";
 @import "./custom.css";
 @import "./site.css";
 @import "./studio.css";
@@ -10,6 +10,7 @@
   margin: 0px;
   box-sizing: border-box;
 }
+
 html {
   font-size: var(--app-font-size);
   height: 100vh;
@@ -56,19 +57,8 @@ body {
   height: 100vh;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   /* smartphones, iPhone, portrait 480x320 phones */
-
-  :root {
-    --side-nav-width: 0px;
-    --app-font-size: 1.125rem;
-  }
-  .boxes {
-    flex-direction: column;
-  }
-  .nav-menu-icon {
-    transform: translateX(0px);
-  }
 
   /* .page-layout {
     overflow-y: auto;
@@ -76,36 +66,26 @@ body {
 }
 /* | */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  :root {
-    --side-nav-list-item-display-label: none;
-    --side-nav-width: 3rem;
-    --app-font-size: 1.125rem;
-  }
 }
-/* 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+/* @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   :root {
-    --app-font-size: 1rem;
+    --app-font-size: 10rem;
   }
 } */
-
-@media (min-width: 1280px) {
-  :root {
-    --app-font-size: 1rem;
-  }
-  body {
-    font-size: 1em;
-  }
-}
-@media (min-width: 1800px) {
+@media (min-width: 1025px) {
   :root {
     --app-font-size: 1.5rem;
   }
   body {
-    font-size: 0.66em;
+    font-size: 0.5em;
   }
-
-  .boxes {
-    font-size: 0.8em !important;
+}
+@media (min-width: 1280px) {
+  :root {
+    --app-font-size: 1.5rem;
+  }
+  body {
+    font-size: 0.6em;
   }
 }

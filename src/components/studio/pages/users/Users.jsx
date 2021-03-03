@@ -4,9 +4,12 @@ import Boxes from "../../../common/boxes/Boxes";
 import UserTable from "./UserTable";
 import Loading from "../../../common/Loading";
 import useFetch from "../../../../customHooks/useFetch";
-import PageHeader from "./../../../common/PageHeader";
 import { toast } from "react-toastify";
-import { AddEditDialog } from "./../dialogs/Index";
+import AddEditDialog from "./AddEditDialog";
+import {
+  TemplateHeader,
+  TemplateContent,
+} from "./../../../common/template/Index";
 
 const Users = () => {
   const [open, setOpen] = useState(false);
@@ -65,21 +68,21 @@ const Users = () => {
   return (
     <>
       {!isLoading ? (
-        <div className="page">
-          <PageHeader
+        <>
+          <TemplateHeader
             icon="fa fa-users"
             header="users"
             toolbarButtons={toolbarButtons}
           />
-          <div className="page-layout">
+          <TemplateContent>
             <Boxes list={boxes} />
             <UserTable
               data={response}
               deleteUser={deleteUser}
               editUser={editUser}
             />
-          </div>
-        </div>
+          </TemplateContent>
+        </>
       ) : (
         <Loading />
       )}

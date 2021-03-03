@@ -1,20 +1,21 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import NotFound from "./../components/pages/NotFound";
-import StudioLayout from "./../layout/StudioLayout";
-import SiteLayout from "./../layout/SiteLayout";
+import Layout from "../layout/Layout";
 import StudioRouter from "./../components/studio/Router";
 import SiteRouter from "./../components/site/Router";
 
 const AppRouter = ({ component: Component, layout: Layout, ...rest }) => {
-  <Route
-    {...rest}
-    render={(props) => (
-      <Layout>
-        <Component {...props}></Component>
-      </Layout>
-    )}
-  ></Route>;
+  return (
+    <Route
+      {...rest}
+      render={(props) => (
+        <Layout>
+          <Component {...props}></Component>
+        </Layout>
+      )}
+    ></Route>
+  );
 };
 const Router = (props) => {
   return (
@@ -29,15 +30,15 @@ const Router = (props) => {
     // </Switch>
     <Switch>
       <Route path="/studio">
-        <StudioLayout>
+        <Layout>
           <StudioRouter />
-        </StudioLayout>
+        </Layout>
       </Route>
       <Route exact path="/notFound" component={NotFound} />
       <Route path="/">
-        <SiteLayout>
+        <Layout isSiteView>
           <SiteRouter />
-        </SiteLayout>
+        </Layout>
       </Route>
       <Redirect to="/notFound" />
     </Switch>

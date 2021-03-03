@@ -1,6 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
+const NavBar = (props) => {
+  console.log("nvbar");
+  return (
+    <Wrapper className="nav-bar">
+      <div className="nav-menu-icon">
+        <i className="fa fa-list list-icon"></i>
+      </div>
+      <div className="nav-user-info">
+        <i className="fa fa-user"></i>
+        <span>Welcome: Adham Hadeed</span>
+      </div>
+    </Wrapper>
+  );
+};
+
+export default NavBar;
+
 const Wrapper = styled.nav`
   background: #fff;
   width: 100%;
@@ -8,7 +25,6 @@ const Wrapper = styled.nav`
   height: var(--nav-bar-height);
   justify-content: space-between;
   align-items: center;
-
   position: relative;
   z-index: var(--app-zindex);
   .nav-menu-icon {
@@ -17,7 +33,7 @@ const Wrapper = styled.nav`
     height: 100%;
     box-shadow: var(--app-box-shadow);
     position: relative;
-    transform: translateX(calc(-2 * var(--nav-bar-left-menu-width)));
+    transition: var(--app-transition);
   }
   .nav-menu-icon i {
     position: absolute;
@@ -25,7 +41,6 @@ const Wrapper = styled.nav`
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
   .nav-user-info {
     padding-right: var(--app-alt-padding);
     display: flex;
@@ -43,22 +58,17 @@ const Wrapper = styled.nav`
     // font size 12px of bosu wich is 16px;
     font-size: 0.75em;
   }
+  @media (max-width: 500px) {
+    --nav-bar-left-menu-width: 3em;
+    .nav-menu-icon {
+      transform: translateX(0px);
+    }
+  }
+  @media (min-width: 501px) {
+    .nav-menu-icon {
+      transform: translateX(-200px);
+    }
+  }
+  @media (min-width: 768px) {
+  }
 `;
-
-function NavBar(props) {
-  console.log("nvbar");
-  return (
-    <Wrapper className="nav-bar">
-      <div className="nav-menu-icon">
-        {/* <i className="fa fa-user-circle-o user-icon"></i> */}
-        <i className="fa fa-list list-icon"></i>
-      </div>
-      <div className="nav-user-info">
-        <i className="fa fa-user"></i>
-        <span>Welcome: Adham Hadeed</span>
-      </div>
-    </Wrapper>
-  );
-}
-
-export default NavBar;

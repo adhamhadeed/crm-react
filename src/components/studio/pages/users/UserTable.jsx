@@ -89,10 +89,7 @@ const UserTable = (props) => {
 
   return (
     <>
-      <div className="custom-table">
-        <Table data={data} columns={columns} onColumnResize={onColumnResize} />
-      </div>
-
+      <Table data={data} columns={columns} onColumnResize={onColumnResize} />
       <ConfirmationDialog
         confirmationDialog={confirmationDialog}
         setConfirmationDialg={setConfirmationDialg}
