@@ -5,18 +5,18 @@ import Layout from "../layout/Layout";
 import StudioRouter from "./../components/studio/Router";
 import SiteRouter from "./../components/site/Router";
 
-const AppRouter = ({ component: Component, layout: Layout, ...rest }) => {
-  return (
-    <Route
-      {...rest}
-      render={(props) => (
-        <Layout>
-          <Component {...props}></Component>
-        </Layout>
-      )}
-    ></Route>
-  );
-};
+// const AppRouter = ({ component: Component, layout: Layout, ...rest }) => {
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) => (
+//         <Layout>
+//           <Component {...props}></Component>
+//         </Layout>
+//       )}
+//     ></Route>
+//   );
+// };
 const Router = (props) => {
   return (
     // <Switch>
